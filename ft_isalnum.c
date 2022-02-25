@@ -6,13 +6,15 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/24 12:30:58 by supersko         ###   ########.fr       */
+/*   Updated: 2022/02/24 12:35:47 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int	ft_isalnum(int c)
 {
-	if (c >= '0' && c <= '9')
+	if ((c >= (int) 'A' && c <= (int) 'Z') ||
+		(c >= (int) 'a' && c <= (int) 'z') ||
+		(c >= '0' && c <= '9'))
 	{
 		return (1);
 	}
@@ -33,11 +35,11 @@ int	main(int argc, char *argv[])
 	ii = -1;
 	while (ii < 257)
 	{
-		if (isdigit(ii) != ft_isdigit(ii))
+		if (isalnum(ii) != ft_isalnum(ii))
 		{
-			printf("isdigit(%c) = %d\n", (char)ii, isdigit(ii));
-			printf("ft_isdigit(%c) = %d\n", (char)ii, ft_isdigit(ii));
-			return (error_msg(ii, "isdigit"));
+			printf("isalnum(%c) = %d\n", (char)ii, isalnum(ii));
+			printf("ft_isalnum(%c) = %d\n", (char)ii, ft_isalnum(ii));
+			return (error_msg(ii, "isalnum"));
 		}
 		ii++;
 	}
