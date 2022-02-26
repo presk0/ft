@@ -1,52 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/25 17:39:12 by supersko         ###   ########.fr       */
+/*   Updated: 2022/02/26 11:41:22 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, unsigned int len)
+unsigned int ft_strlen(char *);
+
+unsigned int	ft_strlcpy(char *dst, char *src, unsigned int dstsize)
 {
 	unsigned int	ii;
+	unsigned int	src_len;
 
 	ii = 0;
-	while (ii < len)
+	src_len = ft_strlen(src);
+	if (!dstsize)
+		return (src_len);
+	while (ii < dstsize - 1)
 	{
-		((char *) dest)[ii] = ((char *) src)[ii];
+		dst[ii] = src[ii];
 		ii++;
 	}
-	return (b);
+	dst[dstsize - 1] = '\0';
+	return (src_len);
 }
 
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
-int test_memcpy(char *to_cpy, int len)
+int test_strlcpy(char *to_cpy, int len)
 {
-	char	s1[1000];
-	char	s2[1000];
+	char	*s1;
+	char	*s2;
 	int		ii = 0;
+	int		jj = 0;
 
-	memcpy(s1, to_cpy);
-	ft_memcpy(s2, to_cpy);
-	while (ii < len)
-	{
-		if (s1[ii] != s2[ii])
-		{
-			printf("differents output for str=[%s]\nmemcpy(str) = [%s]\nft_memcpy(str) = [%s]\nlen/str_bufsize = %d\nbuf_size = %d\n", str, s1, s2, len, buf_size);
-			printf("\n");
-			printf("\n");
-			return (1);
-		}
-		ii++;
-	}
-	return (0);
+	s1 = malloc(sizeof(char) * 20);
+	s2 = malloc(sizeof(char) * 20);
+	strlcpy(s1, to_cpy, len);
+	ft_strlcpy(s2, to_cpy, len);
+	return (strncmp(s1, s2, len));
 }
 
 int	main(int argc, char *argv[])
@@ -55,17 +55,13 @@ int	main(int argc, char *argv[])
 
 	while (ii < 5)
 	{
-		char str[ii];
-		strcpy(str, "abc\n");
-		test_memcpy(str, c, ii);
+		test_strlcpy("abc", ii);
 		ii++;
 	}
 	ii = 0;
-	while (ii < 5)
+	while (ii < 2)
 	{
-		char str[ii];
-		strcpy(str, "");
-		test_memcpy(str, c, ii);
+		test_strlcpy("", ii);
 		ii++;
 	}
 	printf("can be a good job ;)\n");

@@ -1,47 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/24 12:30:58 by supersko         ###   ########.fr       */
+/*   Updated: 2022/02/25 21:05:04 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+unsigned long int	ft_strlen(char *str)
 {
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
+	int	i;
 
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+/*
 #include "error_msg.h"
 #include <ctype.h>
-#include <stdio.h>
+#include <string.h>
+
+int test_strlen(char *str, int buf_size)
+{
+	if (strlen(str) != ft_strlen(str))
+	{
+		printf("differents output for str=%s\n\t\
+			strlen(str) = %lu; ft_strlen(str) = %lu\nbuf_size = %d\n",\
+			str, strlen(str), ft_strlen(str), buf_size);
+		return (1);
+	}
+	return (0);
+}
 
 int	main(int argc, char *argv[])
 {
-	int	ii;
+	int ii = 0;
 
-	ii = -1;
-	while (ii < 257)
+	while (ii < 6)
 	{
-		if (isdigit(ii) != ft_isdigit(ii))
-		{
-			printf("isdigit(%c) = %d\n", (char)ii, isdigit(ii));
-			printf("ft_isdigit(%c) = %d\n", (char)ii, ft_isdigit(ii));
-			return (error_msg(ii, "isdigit"));
-		}
+		char str[ii];
+		strcpy(str, "abc\n");
+		test_strlen(str, ii);
+		strcpy(str, "");
+		test_strlen(str, ii);
 		ii++;
 	}
-	(void)argc;
-	printf("%s have same output from same input\n", argv[0]);
-	return (0);
+	printf("can be a good job ;)\n");
 }
+*/
