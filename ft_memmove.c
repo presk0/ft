@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/25 19:50:50 by supersko         ###   ########.fr       */
+/*   Updated: 2022/02/26 15:32:46 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dst, void *src, unsigned int len)
 	{
 		while (ii < len)
 		{
-			((char *) dst)[len - ii] = ((char *) src)[len - ii];
+			((char *) dst)[len - ii - 1] = ((char *) src)[len - ii - 1];
 			ii++;
 		}
 	}
@@ -38,25 +38,63 @@ void	*ft_memmove(void *dst, void *src, unsigned int len)
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
-
-int test_memmove(char *to_cpy, int len)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	char	s1[5] = "1111";
-	char	s2[5] = "2222";
+	unsigned int	ii;
+
+	ii = 0;
+	while (ii < n)
+	{
+		if (s1[ii] == s2[ii]) 
+		{
+			if (s1[ii] == '\0')
+				return (0);
+			ii++;
+		}
+		else
+			return (s1[ii] - s2[ii]);
+	}
+	return (0);
+}
+	
+int test_memmove(int len)
+{
+	char	s1[] = "0123456789";
+	char	s2[] = "0123456789";
 	int		ii = 0;
 
-	memmove(s1, to_cpy, len);
-	ft_memmove(s2, to_cpy, len);
-	while (ii < len)
+	memmove(s1 + 3, s1 + 2, len);
+	ft_memmove(s2 + 3, s2 + 2, len);
+	if (ft_strncmp(s1, s2, 1000))
 	{
-		if (s1[ii] != s2[ii])
-		{
-			printf("differents output for str=[%s]\nmemmove(str) = [%s]\nft_memmove(str) = [%s]\n", to_cpy, s1, s2);
-			printf("\n");
-			printf("\n");
-			return (1);
-		}
-		ii++;
+		printf("memmove(str) = [%s]\n\
+			ft_memmove(str) = [%s]\n\
+			len = %d\n\
+			", s1, s2, len);
+		printf("\n");
+		return (1);
+	}
+	memmove(s1 + 3, s1 + 2, len);
+	ft_memmove(s2 + 3, s2 + 2, len);
+	if (ft_strncmp(s1, s2, 1000))
+	{
+		printf(" memmove(str) = [%s]\n\
+			ft_memmove(str) = [%s]\n\
+			len = %d\n\
+			", s1, s2, len);
+		printf("\n");
+		return (1);
+	}
+	memmove(s1 + 3, s1 + 3, len);
+	ft_memmove(s2 + 3, s2 + 3, len);
+	if (ft_strncmp(s1, s2, 1000))
+	{
+		printf(" memmove(str) = [%s]\n\
+			ft_memmove(str) = [%s]\n\
+			len = %d\n\
+			", s1, s2, len);
+		printf("\n");
+		return (1);
 	}
 	return (0);
 }
@@ -67,17 +105,13 @@ int	main(int argc, char *argv[])
 
 	while (ii < 5)
 	{
-		char str[ii];
-		strcpy(str, "aaaaaa");
-		test_memmove(str, ii);
+		test_memmove(ii);
 		ii++;
 	}
 	ii = 0;
 	while (ii < 6)
 	{
-		char str[ii];
-		strcpy(str, "");
-		test_memmove(str, ii);
+		test_memmove(ii);
 		ii++;
 	}
 	printf("can be a good job ;)\n");
