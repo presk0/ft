@@ -6,11 +6,11 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/26 13:59:52 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:15:14 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int ft_strlen(char *);
+#include "header.h"
 
 unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
 {
@@ -33,12 +33,13 @@ unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
 	dst[dst_len + dstsize - 1] = '\0';
 	return (ret);
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-
+// MAIN
 int test_strlcat(char *str, char *to_append, int len)
 {
 	char	*s1;
@@ -83,3 +84,4 @@ int	main(int argc, char *argv[])
 	}
 	printf("can be a good job ;)\n");
 }
+*/

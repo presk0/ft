@@ -6,33 +6,19 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/27 14:41:22 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:29:15 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	my_isspace(char c)
+#include "header.h"
+
+int	ft_isspace(char c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' ||
+	if (c == '\t' || c == '\n' || c == '\v' || \
 		c == '\f' || c == '\r' || c == ' ')
 		return (1);
 	else
 		return (0);
-}
-
-int my_isdigit(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
-}
-
-int	c_to_i(char c)
-{
-	if (my_isdigit(c))
-		return ((int) c - (int) '0');
-	else
-		return (-1);
 }
 
 int	ft_atoi(char *str)
@@ -43,7 +29,7 @@ int	ft_atoi(char *str)
 
 	ii = 0;
 	sign = 1;
-	while (my_isspace(str[ii]))
+	while (ft_isspace(str[ii]))
 		ii++;
 	if (str[ii] == '-' || str [ii] == '+')
 	{
@@ -52,20 +38,21 @@ int	ft_atoi(char *str)
 		ii++;
 	}
 	nbr = 0;
-	while (my_isdigit(str[ii]))
+	while (ft_isdigit(str[ii]))
 	{
 		nbr *= 10;
 		nbr += c_to_i(str[ii]);
 		ii++;
 	}
-	return ((int) (sign * nbr));
+	return ((int)(sign * nbr));
 }
 
-#include "error_msg.h"
+/*
+//
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+// MAIN
 int	main(void)
 {
 	char *nb;
@@ -111,3 +98,4 @@ int	main(void)
 	free(nb);
 	return (0);
 }
+*/

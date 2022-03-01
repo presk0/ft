@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/24 15:27:49 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:53:58 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ int	ft_isprint(int c)
 		return (0);
 	}
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <stdio.h>
-
+// MAIN
 int	main(int argc, char *argv[])
 {
 	int	ii;
@@ -45,3 +46,4 @@ int	main(int argc, char *argv[])
 	printf("%s have same output from same input\n", argv[0]);
 	return (0);
 }
+*/

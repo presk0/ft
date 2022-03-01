@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset_tofinish.c                               :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/25 15:16:10 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:22:59 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ void	*ft_memset(void *b, int c, unsigned int len)
 	}
 	return (b);
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
-
+// MAIN
 int test_memset(char *str, int c, int len, int buf_size)
 {
 	char	s1[1000];
@@ -41,7 +42,9 @@ int test_memset(char *str, int c, int len, int buf_size)
 	{
 		if (s1[ii] != s2[ii])
 		{
-			printf("differents output for str=[%s]\nmemset(str) = [%s]\nft_memset(str) = [%s]\nlen/str_bufsize = %d\nbuf_size = %d\n", str, s1, s2, len, buf_size);
+			printf("differents output for str=[%s]\nmemset(str) = [%s]\n\
+			ft_memset(str) = [%s]\nlen/str_bufsize = %d\nbuf_size = %d\n"\
+			, str, s1, s2, len, buf_size);
 			printf("\n");
 			printf("\n");
 			return (1);
@@ -78,3 +81,4 @@ int	main(int argc, char *argv[])
 	}
 	printf("can be a good job ;)\n");
 }
+*/

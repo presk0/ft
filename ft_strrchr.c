@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/26 16:56:23 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:10:38 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,19 @@ char	*ft_strrchr(char *s, int c)
 		while (ii >= 0)
 		{
 			if (s[ii] == c)
-			{
 				return (s + ii);
-			}
 			ii--;
 		}
 	}
 	return (0);
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-
+// MAIN
 int test_strrchr(char *str, char c)
 {
 	unsigned int ret;
@@ -68,3 +67,4 @@ int	main(int argc, char *argv[])
 	test_strrchr("", '\0');
 	printf("test finished\n");
 }
+*/

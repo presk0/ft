@@ -1,60 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 13:54:51 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:09:40 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *s, int c)
+#include <stdlib>
+
+char	*ft_substr(char *s, unsigned int start, unsigned int len)
 {
 	unsigned int	ii;
+	char			*newstr;
 
+	newstr = (char *) malloc(sizeof(char) * (len + 1));
 	ii = 0;
-	while (s[ii] != '\0')
+	while (s[ii++])
+		;
+	if (!newstr && ii <= start)
+		return (NULL);
+	ii = 0;
+	while (ii < len && s[ii + start])
 	{
-		if (s[ii] == c)
-		{
-			return (s + ii);
-		}
+		newstr[ii] = s[ii + start];
 		ii++;
 	}
-	if (c == '\0')
-		return (s + ii);
-	else
-		return (0);
+	newstr[ii] = '\0';
+	return (newstr);
 }
 /*
 //
-#include "error_msg.h"
-#include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 // MAIN
-int test_strchr(char *str, char c)
-{
-	unsigned int ret;
 
-	ret = strchr(str, c) - ft_strchr(str, c);
-	if (ret)
-	{
-		printf("[bug] at str: %s, c: %c\n", str, c);
-		return (1);
-	}
-	return (0);
-}
-
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	int ii = 0;
-	test_strchr("abc", 'b');
-	test_strchr("abc", '\0');
-	test_strchr("", 'a');
-	test_strchr("", '\0');
-	printf("test finished\n");
+	;
 }
 */

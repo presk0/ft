@@ -6,11 +6,12 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/25 17:39:12 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:25:21 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, unsigned int len)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, \
+			unsigned int len)
 {
 	unsigned int	ii;
 
@@ -22,11 +23,12 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, unsigned int len)
 	}
 	return (b);
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
-
+// MAIN
 int test_memcpy(char *to_cpy, int len)
 {
 	char	s1[1000];
@@ -39,7 +41,9 @@ int test_memcpy(char *to_cpy, int len)
 	{
 		if (s1[ii] != s2[ii])
 		{
-			printf("differents output for str=[%s]\nmemcpy(str) = [%s]\nft_memcpy(str) = [%s]\nlen/str_bufsize = %d\nbuf_size = %d\n", str, s1, s2, len, buf_size);
+			printf("differents output for str=[%s]\nmemcpy(str) = [%s]\n\
+			ft_memcpy(str) = [%s]\nlen/str_bufsize = %d\nbuf_size = %d\n"\
+			, str, s1, s2, len, buf_size);
 			printf("\n");
 			printf("\n");
 			return (1);
@@ -70,3 +74,4 @@ int	main(int argc, char *argv[])
 	}
 	printf("can be a good job ;)\n");
 }
+*/

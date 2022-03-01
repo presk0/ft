@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/26 11:04:49 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:13:36 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	ii = 0;
 	while (ii < n)
 	{
-		if (s1[ii] == s2[ii]) 
+		if (s1[ii] == s2[ii])
 		{
 			if (s1[ii] == '\0')
 				return (0);
@@ -28,10 +28,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-
+/*
+//
 #include "error_msg.h"
 #include <string.h>
-
+// MAIN
 int test_strncmp(char *s1, char *s2, int len)
 {
 	int		ii = 0;
@@ -40,7 +41,8 @@ int test_strncmp(char *s1, char *s2, int len)
 		return (1);
 	else
 	{
-		printf("[BUG]\ns1 = %s, s2 %s\nstrncmp = %d\nft_strncmp = %d\nlen = %d\n\n", s1, s2, strncmp(s1, s2, len), ft_strncmp(s1, s2, len), len);
+		printf("[BUG]\ns1 = %s, s2 %s\nstrncmp = %d\nft_strncmp = %d\n\
+		len = %d\n\n", s1, s2, strncmp(s1, s2, len), ft_strncmp(s1, s2, len), len);
 		return (0);
 	}
 }
@@ -85,3 +87,4 @@ int	main(int argc, char *argv[])
 	}
 	printf("can be a good job ;)\n");
 }
+*/

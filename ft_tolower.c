@@ -1,55 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 13:57:22 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:59:00 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long int	ft_strlen(char *str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (c >= (int) 'A' && c <= (int) 'Z')
+	{
+		return (c + 32);
+	}
+	else
+	{
+		return (c);
+	}
 }
 /*
 //
 #include "error_msg.h"
 #include <ctype.h>
-#include <string.h>
+#include <stdio.h>
 // MAIN
-int test_strlen(char *str, int buf_size)
+int	main(void)
 {
-	if (strlen(str) != ft_strlen(str))
-	{
-		printf("differents output for str=%s\n\t\
-			strlen(str) = %lu; ft_strlen(str) = %lu\nbuf_size = %d\n",\
-			str, strlen(str), ft_strlen(str), buf_size);
-		return (1);
-	}
-	return (0);
-}
+	int	ii;
 
-int	main(int argc, char *argv[])
-{
-	int ii = 0;
-
-	while (ii < 6)
+	ii = -1;
+	while (ii < 257)
 	{
-		char str[ii];
-		strcpy(str, "abc\n");
-		test_strlen(str, ii);
-		strcpy(str, "");
-		test_strlen(str, ii);
+		if (tolower(ii) != ft_tolower(ii))
+		{
+			printf("tolower(%c) = %d\n", (char)ii, tolower(ii));
+			printf("ft_tolower(%c) = %d\n", (char)ii, ft_tolower(ii));
+			return (error_msg(ii, "tolower"));
+		}
 		ii++;
 	}
-	printf("can be a good job ;)\n");
+	printf("You r da man ;)\n");
+	return (0);
 }
 */

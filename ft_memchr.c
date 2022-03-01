@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/26 17:20:03 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:54:08 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ void	*ft_memchr(char *s, int c, unsigned int n)
 	}
 	return ((void *) 0);
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-
+// MAIN
 int test_memchr(char *str, char c)
 {
 	unsigned int	ret;
@@ -59,3 +60,4 @@ int	main(int argc, char *argv[])
 	test_memchr("", '\0');
 	printf("test finished\n");
 }
+*/

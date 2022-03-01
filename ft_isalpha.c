@@ -6,13 +6,14 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/23 16:59:39 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:30:56 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if ((c >= (int) 'A' && c <= (int) 'Z') || (c >= (int) 'a' && c <= (int) 'z'))
+	if ((c >= (int) 'A' && c <= (int) 'Z') || \
+		(c >= (int) 'a' && c <= (int) 'z'))
 	{
 		return (1);
 	}
@@ -21,11 +22,12 @@ int	ft_isalpha(int c)
 		return (0);
 	}
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <stdio.h>
-
+// MAIN
 int	main(void)
 {
 	int	ii;
@@ -43,3 +45,4 @@ int	main(void)
 	}
 	return (0);
 }
+*/

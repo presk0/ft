@@ -6,11 +6,11 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/26 11:41:22 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:57:16 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int ft_strlen(char *);
+#include "header.h"
 
 unsigned int	ft_strlcpy(char *dst, char *src, unsigned int dstsize)
 {
@@ -29,12 +29,13 @@ unsigned int	ft_strlcpy(char *dst, char *src, unsigned int dstsize)
 	dst[dstsize - 1] = '\0';
 	return (src_len);
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-
+// MAIN
 int test_strlcpy(char *to_cpy, int len)
 {
 	char	*s1;
@@ -66,3 +67,4 @@ int	main(int argc, char *argv[])
 	}
 	printf("can be a good job ;)\n");
 }
+*/

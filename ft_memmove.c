@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/26 15:32:46 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 13:54:36 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	*ft_memmove(void *dst, void *src, unsigned int len)
 	return (dst);
 }
 
+/*
+//
 //Ne fait pas la diff avec memcpy
 #include "error_msg.h"
 #include <ctype.h>
@@ -41,7 +43,7 @@ void	*ft_memmove(void *dst, void *src, unsigned int len)
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	ii;
-
+// MAIN
 	ii = 0;
 	while (ii < n)
 	{
@@ -116,3 +118,4 @@ int	main(int argc, char *argv[])
 	}
 	printf("can be a good job ;)\n");
 }
+*/

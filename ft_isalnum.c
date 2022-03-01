@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/02/24 12:35:47 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:30:16 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	if ((c >= (int) 'A' && c <= (int) 'Z') ||
-		(c >= (int) 'a' && c <= (int) 'z') ||
+	if ((c >= (int) 'A' && c <= (int) 'Z') || \
+		(c >= (int) 'a' && c <= (int) 'z') || \
 		(c >= '0' && c <= '9'))
 	{
 		return (1);
@@ -23,11 +23,12 @@ int	ft_isalnum(int c)
 		return (0);
 	}
 }
-
+/*
+//
 #include "error_msg.h"
 #include <ctype.h>
 #include <stdio.h>
-
+// MAIN
 int	main(int argc, char *argv[])
 {
 	int	ii;
@@ -47,3 +48,4 @@ int	main(int argc, char *argv[])
 	printf("%s have same output from same input\n", argv[0]);
 	return (0);
 }
+*/
