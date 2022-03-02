@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 11:42:47 by supersko         ###   ########.fr       */
+/*   Created: 2022/03/01 19:25:15 by supersko          #+#    #+#             */
+/*   Updated: 2022/03/02 11:19:30 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int		ft_intlen(int n);
-
-char    *ft_itoa(int n)
+int	ft_intlen(int n)
 {
-	int		len;
-	char	*ret;
+	int	len;
 
-	if (n == -2147483648)
-		return "-2147483648";
-	len = ft_intlen(n);
-	ret = (char *) malloc(sizeof(char) * (len + 1));
-	ret[len] = '\0';
+	len = 0;
 	if (n < 0)
 	{
-		*(ret) = '-';
 		n *= -1;
+		len++;
 	}
-	while (n > 0)
+	while (n > 9)
 	{
-		*(ret + --len) = (char) (n % 10) + '0';
 		n /= 10;
+		len++;
 	}
-	return ret;
+	return (++len);
 }
 /*
 //
@@ -42,10 +35,11 @@ char    *ft_itoa(int n)
 // MAIN
 int main(void)
 {
-	char	*strnb;
-
-	strnb = ft_itoa(-123);
-	printf("%s\n", strnb);
-	free(strnb);
+	printf("%d\n", ft_intlen(0));
+	printf("%d\n", ft_intlen(-0));
+	printf("%d\n", ft_intlen(-1));
+	printf("%d\n", ft_intlen(1));
+	printf("%d\n", ft_intlen(-10));
+	printf("%d\n", ft_intlen(1234567890));
 }
 */
