@@ -6,15 +6,13 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 19:16:01 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:35:54 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-unsigned int    ft_wdcnt(char *s, int c);
-
-unsigned int	ft_strlench(char *s, char c)
+static unsigned int	ft_strlench(char const *s, char c)
 {
 	unsigned int	ii;
 
@@ -24,7 +22,40 @@ unsigned int	ft_strlench(char *s, char c)
 	return (ii);
 }
 
-char **ft_split(char *s, char c)
+// Retourne le nombre de mots separe par c
+// on compte le nombre de separateurs
+// (les premiers et derniers exclus)
+// et on ajoute 1 car il y a toujours
+// un poteau (mot) de plus que de fils :
+// |mot|sep|mot| => 1 sep = 2 mots
+
+static unsigned int	ft_wdcnt(char *s, int c)
+{
+	unsigned int	ii;
+	unsigned int	count;
+	unsigned int	end;
+
+	ii = 0;
+	count = 0;
+	end = ft_strlen(s);
+	while (!s[end] || s[end] == c)
+		end--;
+	while (s[ii] == c)
+		ii++;
+	while (ii <= end)
+	{
+		if (s[ii] == c)
+		{
+			count++;
+			while (s[ii] == c)
+				ii++;
+		}
+		ii++;
+	}
+	return ++count;
+}
+
+char **ft_split(char const *s, char c)
 {
 	char			**ret;
 	unsigned int	lettab_ind;
@@ -32,7 +63,7 @@ char **ft_split(char *s, char c)
 	unsigned int	letter_ind;
 	unsigned int	nb_wd;
 
-	nb_wd = ft_wdcnt(s, c);
+	nb_wd = ft_wdcnt((char *) s, c);
 	ret = (char **) malloc((++nb_wd) * sizeof(char*));
 	*(ret + nb_wd) = (char *) NULL;
 	wd_ind = 0;

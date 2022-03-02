@@ -6,13 +6,13 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 14:15:14 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:11:56 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize)
+size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 {
 	unsigned int	ii;
 	unsigned int	src_len;

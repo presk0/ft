@@ -6,19 +6,24 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 14:29:15 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:30:53 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' || \
 		c == '\f' || c == '\r' || c == ' ')
 		return (1);
 	else
 		return (0);
+}
+
+static int	c_to_i(char c)
+{
+	return ((int) c - (int) '0');
 }
 
 int	ft_atoi(char *str)

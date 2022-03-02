@@ -1,52 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getchnb.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 16:59:58 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:40:52 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-unsigned int	ft_wdcnt(char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	ii;
-	unsigned int	count;
-	unsigned int	end;
+	char			*ret;
 
+	ret = (char *) malloc(sizeof(char) * (ft_strlen((char *) s) + 1));
 	ii = 0;
-	count = 0;
-	end = ft_strlen(s);
-	while (!s[end] || s[end] == c)
-		end--;
-	while (s[ii] == c)
-		ii++;
-	while (ii <= end)
+	while (s[ii] != '\0')
 	{
-		if (s[ii] == c)
-		{
-			count++;
-			while (s[ii] == c)
-				ii++;
-		}
+		ret[ii] = f(ii, s[ii]);
 		ii++;
 	}
-	return count;
+	ret[ii] = '\0';
+	return (ret);
 }
+/*
 //
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 // MAIN
-//
-int main(void)
+int f(int ii, char c)
 {
-	printf("%u\n", ft_wdcnt("asdf", 'd'));
-	printf("%u\n", ft_wdcnt("dasdfdd", 'd'));
-	printf("%u\n", ft_wdcnt("  ceci est une phrase  ", ' '));
-	printf("%u\n", ft_wdcnt("ceci est une phrase", ' '));
-	printf("%u\n", ft_wdcnt("", 'd'));
-	printf("%u\n", ft_wdcnt("\0\0\0asdf\0", '\0'));
+	if (ii % 2)
+		return (int) (c);
+	else
+		return (int) ('-');
 }
+
+int	main(int argc, char *argv[])
+{
+	int ii = 0;
+	printf("%s\n", ft_strmapi("abc", f));
+	printf("%s\n", ft_strmapi("abc", f));
+}
+*/

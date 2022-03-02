@@ -6,13 +6,13 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:25:15 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 11:19:30 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/02 14:55:09 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-int	ft_intlen(int n)
+int	intlen(int n)
 {
 	int	len;
 
@@ -22,24 +22,10 @@ int	ft_intlen(int n)
 		n *= -1;
 		len++;
 	}
-	while (n > 9)
+	while (n > 10)
 	{
 		n /= 10;
 		len++;
 	}
 	return (++len);
 }
-/*
-//
-#include <stdio.h>
-// MAIN
-int main(void)
-{
-	printf("%d\n", ft_intlen(0));
-	printf("%d\n", ft_intlen(-0));
-	printf("%d\n", ft_intlen(-1));
-	printf("%d\n", ft_intlen(1));
-	printf("%d\n", ft_intlen(-10));
-	printf("%d\n", ft_intlen(1234567890));
-}
-*/
