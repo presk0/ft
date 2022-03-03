@@ -6,7 +6,7 @@
 #    By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2022/03/03 13:17:46 by supersko         ###   ########.fr        #
+#    Updated: 2022/03/03 16:13:35 by supersko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,17 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) -c $(SRCS) $(HEADER)
-	ar -r $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 clean:
 	rm -rf $(OBJS)
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
 
+test:
+	$(CC) $(SRCS) $(HEADER)
+	./a.out
+	rm a.out

@@ -6,11 +6,11 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 14:13:36 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:50:43 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(unsigned char *s1, unsigned char *s2, unsigned int n)
 {
 	unsigned int	ii;
 

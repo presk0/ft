@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 18:26:50 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/03 16:22:27 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __HEADER_H__
 
 #include <stdlib.h>
+#include <unistd.h>
 
 int		ft_atoi(char *str);
 void	*ft_bzero(void *s, unsigned int n);
@@ -24,14 +25,14 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 void	*ft_memchr(void *s, int c, size_t n);
-void	*ft_memcmp(void *s1, void *s2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, void *src, size_t n);
 void	*ft_memmove(void *dst, void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t n);
-char	*ft_strdup(char *s);
-size_t	ft_strlcat(char *dst, char *src, size_t dstsize);
+char	*ft_strdup(const char *s);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
-int		ft_strlen(char *s);
+int		ft_strlen(const char *s);
 int		ft_strncmp(char *s1, char *s2, size_t dstsize);
 char	*ft_strnstr(char *haystack,  char *needle, size_t len);
 char	*ft_strchr(char *s, int c);
@@ -45,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);

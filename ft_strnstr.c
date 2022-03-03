@@ -6,12 +6,32 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 15:04:01 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:59:31 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/* // CODE SOURCE
+char * strnstr(const char *s, const char *find, size_t slen)
+{
+	char c, sc;
+	size_t len;
 
+	if ((c = *find++) != '\0') {
+		len = strlen(find);
+		do {
+			do {
+				if ((sc = *s++) == '\0' || slen-- < 1)
+					return (NULL);
+			} while (sc != c);
+			if (len > slen)
+				return (NULL);
+		} while (strncmp(s, find, len) != 0);
+		s--;
+	}
+	return ((char *)s);
+}
+*/
 char	*ft_strnstr(char *haystack, char *needle, size_t len)
 {
 	unsigned int	needle_len;
@@ -23,7 +43,7 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len)
 		return (haystack);
 	haystack_len = ft_strlen(haystack);
 	i_haystack = 0;
-	while (i_haystack < len && haystack[i_haystack])
+	while (haystack[i_haystack] && i_haystack + needle_len <= len)
 	{
 		if (ft_strncmp((haystack + i_haystack), needle, len))
 		{
@@ -34,7 +54,7 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len)
 			return (haystack + i_haystack);
 		}
 	}
-	return ((char *) 0);
+	return (NULL);
 }
 
 /*
