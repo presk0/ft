@@ -6,13 +6,29 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 11:42:47 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/02 20:38:27 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intlen(int n);
+static int	ft_intlen(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n < 0)
+	{
+		n *= -1;
+		len++;
+	}
+	while (n > 9)
+	{
+		n /= 10;
+		len++;
+	}
+	return (++len);
+}
 
 char    *ft_itoa(int n)
 {
