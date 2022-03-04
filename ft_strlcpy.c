@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/03 13:36:41 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:48:42 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
-	unsigned int	ii;
 	unsigned int	src_len;
+	unsigned int	ii;
 
-	ii = 0;
+	dstsize--;
 	src_len = ft_strlen(src);
-	if (!dstsize)
-		return (src_len);
-	while (ii < dstsize - 22)
+	if (src_len > dstsize)
+	  src_len = dstsize;
+	ii = 0;
+	while (ii < src_len)
 	{
-		dst[ii] = src[ii];
+		*(dst + ii) = *(src + ii);
 		ii++;
 	}
-	dst[dstsize - 1] = '\0';
+	dst[src_len] = '\0';
 	return (src_len);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/03 17:59:31 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:53:06 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,31 +32,30 @@ char * strnstr(const char *s, const char *find, size_t slen)
 	return ((char *)s);
 }
 */
-char	*ft_strnstr(char *haystack, char *needle, size_t len)
-{
-	unsigned int	needle_len;
-	unsigned int	haystack_len;
-	unsigned int	i_haystack;
 
-	needle_len = ft_strlen(needle);
-	if (needle_len == 0)
-		return (haystack);
-	haystack_len = ft_strlen(haystack);
-	i_haystack = 0;
-	while (haystack[i_haystack] && i_haystack + needle_len <= len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	char			*haystack_cpy;
+	unsigned int	len_cpy;
+
+	if (!ft_strlen(needle))
+		return ((char *) haystack);
+	haystack_cpy = (char *) haystack;
+	len_cpy = len;
+	while (len_cpy--)
 	{
-		if (ft_strncmp((haystack + i_haystack), needle, len))
+		if (ft_strncmp(haystack_cpy, (char *) needle, len))
 		{
-			i_haystack++;
+			haystack_cpy++;
 		}
 		else
 		{
-			return (haystack + i_haystack);
+			return ((char *) ((long unsigned int) haystack_cpy - \
+					  (long unsigned int) haystack));
 		}
 	}
 	return (NULL);
 }
-
 /*
 //
 #include <stdio.h>

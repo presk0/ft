@@ -6,78 +6,31 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/03 21:24:58 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:13:43 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+static unsigned int	ft_strnlen(char *s, size_t max)
 {
 	unsigned int	ii;
-	unsigned int	n;
-	char			*dst_cpy;
-	char			*src_cpy;
 
-	dst_cpy = dst;
-	src_cpy = (char *) src;
-	n = dstsize;
 	ii = 0;
-	while (*dst_cpy && n--)
-	{
-		dst_cpy++;
+	while (s[ii] && ii < max)
 		ii++;
-	}
-	while (*src_cpy && n--)
-	{
-		*(dst_cpy++) = *src_cpy;
-		src_cpy++;
-		ii++;
-	}
-	*(dst_cpy++) = '\0';
-	printf("%s\n", dst);
 	return (ii);
 }
 
-int main(void)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	ft_strlcat("bla bla", "", 2 );
+	unsigned int	dstr_len;
+
+	dstr_len = ft_strnlen(dst, dstsize);
+	if (dstr_len == dstsize)
+		return dstr_len + ft_strlen(src);
+	return (dstr_len + ft_strlcpy(dst + dstr_len, (char *) src, dstsize - dstr_len));
 }
-/* ---- CODE SOURCE ----
- * Appends src to string dst of size siz (unlike strncat, siz is the
- AAAAAAAAA * full size of dst, not space left).  At most siz-1 characters
- * will be copied.  Always NUL terminates (unless siz <= strlen(dst)).
- * Returns strlen(initial dst) + strlen(src); if retval >= siz,
- * truncation occurred.
-size_t ft_strlcat(char *dst, const char *src, size_t siz)
-{
-	register char *d = dst;
-	register const char *s = src;
-	register++ size_t n = siz;
-	size_t dlen;
-
-	// Find the end of dst and adjust bytes left but don't go past end
-	while (n-- != 0 && *d != '\0')
-		d++;
-	dlen = d - dst;
-	n = siz - dlen;
-
-	if (n == 0)
-		return(dlen + ft_strlen(s));
-	while (*s != '\0') {
-		if (n != 1) {
-			*d++ = *s;
-			n--;
-		}
-		s++;
-	}
-	*d = '\0';
-
-	return(dlen + (s - src));	
-	// count does not include NUL
-}
-*/
 /*
 //
 #include <string.h>
@@ -111,9 +64,16 @@ int test_strlcat(char *str, char *to_append, int len)
 int	main(void)
 {
 	int ii = 0;
-	char s_abc[] = "abc";
+	char s_abc[5] = "abc";
+	char s_c[] = "c";
 	char s_empty[] = "";
 
+	while (ii < 5)
+	{
+		test_strlcat(s_abc, s_c, ii);
+		ii++;
+	}
+	ii = 0;
 	while (ii < 5)
 	{
 		test_strlcat(s_abc, s_empty, ii);

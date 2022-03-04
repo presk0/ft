@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/03 16:22:27 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/04 15:50:42 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
 int		ft_strlen(const char *s);
 int		ft_strncmp(char *s1, char *s2, size_t dstsize);
-char	*ft_strnstr(char *haystack,  char *needle, size_t len);
 char	*ft_strchr(char *s, int c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(char *s, int c);
 char	ft_tolower(char c);
 char	ft_toupper(char c);
