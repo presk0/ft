@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/05 11:42:41 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:46:37 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char **ft_split(char const *s, char c)
 	c_cpy[0] = c;
 	c_cpy[1] = '\0';
 	nb_wd = ft_wdcnt((char *) s, c_cpy);
-	ret = (char **) malloc((++nb_wd) * sizeof(char*));
+	ret = (char **) malloc((nb_wd + 1) * sizeof(char*));
 	*(ret + nb_wd) = (char *) NULL;
 	wd_ind = 0;
 	letter_ind = 0;
@@ -100,12 +100,12 @@ char **ft_split(char const *s, char c)
 	}
 	return (ret);
 }
+/*
 #include <stdio.h>
 #include <string.h>
 // MAIN
 int main(void)
 {
-	/*
 	char	**sortie;
 	int		ii;
 
@@ -113,7 +113,8 @@ int main(void)
 	ii = 0;
 	while (sortie[ii] != NULL)
 		 printf("%s\n", sortie[ii++]); 
-*/
+		 */
+	/*
 	char s[10];
 	strcpy(s, "");
 	printf("for [%s] -> %d\n", s, ft_wdcnt(s, " "));
@@ -132,3 +133,4 @@ int main(void)
 	strcpy(s, "bb   bb");
 	printf("for [%s] -> %d\n", s, ft_wdcnt(s, " "));
 }
+	*/

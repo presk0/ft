@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 20:50:29 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:58:12 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	ii;
 	char			*ret;
 
-	ret = (char *) malloc(sizeof(char) * (ft_strlen((char *) s + 1)));
+	ret = (char *) malloc(sizeof(char) * (ft_strlen((char *) s) + 1));
 	if (!ret)
 		return (NULL);
 	ii = 0;
