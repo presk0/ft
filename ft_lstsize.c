@@ -6,11 +6,11 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:39 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/05 12:36:48 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 13:29:19 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "_bonus.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

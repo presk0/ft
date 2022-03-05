@@ -6,7 +6,7 @@
 #    By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2022/03/04 16:29:31 by supersko         ###   ########.fr        #
+#    Updated: 2022/03/05 14:21:17 by supersko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ $(NAME):
 	ar rc $(NAME) $(OBJS)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	rm -rf $(NAME)
@@ -47,11 +47,11 @@ bonus:
 	ar rc $(NAME) $(OBJS_BONUS) $(OBJS)
 
 test:
-	$(CC) $(SRCS) $(HEADER)
+	$(CC) $(SRCS) $(SRCS_BONUS) $(HEADER)
 	./a.out
 	rm a.out
 
 debug:
-	$(CC) -g $(SRCS) $(HEADER)
+	$(CC) -g $(SRCS) $(SRCS_BONUS) $(HEADER)
 	lldb a.out
 	rm a.out
