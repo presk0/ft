@@ -6,13 +6,13 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:33:46 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/05 11:03:55 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:02:51 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		is_trimable(char c, char *trimset)
+static int	is_trimable(char c, char *trimset)
 {
 	int	ii;
 
@@ -34,23 +34,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*ret;
 
 	start = 0;
-	end = ft_strlen( (char *) s1);
+	end = ft_strlen((char *) s1);
 	while (s1[start] && is_trimable((char) s1[start], (char *) set))
 		start++;
-	while (end > start &&  is_trimable((char) s1[end], (char *) set))
+	while (end > start && is_trimable((char) s1[end], (char *) set))
 		end--;
 	ret = malloc(sizeof(char *) * (end - start + 1));
 	if (!ret)
 		return (NULL);
 	ii = 0;
-	while (start <= end && end )
+	while (start <= end && end)
 	{
 		ret[ii] = s1[start + ii];
 		ii++;
 		end--;
 	}
 	ret[ii] = '\0';
-
 	return (ret);
 }
 /*

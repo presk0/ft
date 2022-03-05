@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/04 17:48:42 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:05:49 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 	dstsize--;
 	src_len = ft_strlen(src);
 	if (src_len > dstsize)
-	  src_len = dstsize;
+	src_len = dstsize;
 	ii = 0;
 	while (ii < src_len)
 	{

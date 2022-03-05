@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 20:38:27 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:33:08 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ static int	ft_intlen(int n)
 	return (++len);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		len;
 	char	*ret;
 
 	if (n == -2147483648)
-		return "-2147483648";
+		return ("-2147483648");
 	len = ft_intlen(n);
 	ret = (char *) malloc(sizeof(char) * (len + 1));
 	ret[len] = '\0';
@@ -47,10 +47,10 @@ char    *ft_itoa(int n)
 	}
 	while (n > 0)
 	{
-		*(ret + --len) = (char) (n % 10) + '0';
+		*(ret + --len) = (char)(n % 10) + '0';
 		n /= 10;
 	}
-	return ret;
+	return (ret);
 }
 /*
 //

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/04 15:53:06 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 12:04:58 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		else
 		{
-			return ((char *) ((long unsigned int) haystack_cpy - \
-					  (long unsigned int) haystack));
+			return ((char *)((long unsigned int) haystack_cpy - \
+					(long unsigned int) haystack));
 		}
 	}
 	return (NULL);

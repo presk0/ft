@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/04 17:13:43 by supersko         ###   ########.fr       */
+/*   Created: 2022/03/05 12:08:18 by supersko          #+#    #+#             */
+/*   Updated: 2022/03/05 12:08:20 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	dstr_len = ft_strnlen(dst, dstsize);
 	if (dstr_len == dstsize)
-		return dstr_len + ft_strlen(src);
-	return (dstr_len + ft_strlcpy(dst + dstr_len, (char *) src, dstsize - dstr_len));
+		return (dstr_len + ft_strlen(src));
+	return (dstr_len + \
+			ft_strlcpy(dst + dstr_len, (char *) src, dstsize - dstr_len));
 }
 /*
 //
