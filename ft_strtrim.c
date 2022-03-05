@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:33:46 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/04 20:59:12 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:03:55 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int		is_trimable(char c, char *trimset)
 	ii = 0;
 	while (trimset[ii])
 	{
-		if (trimset[ii] == c)
+		if (trimset[ii] == c || !trimset[ii])
 			return (1);
 		ii++;
 	}
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*ret;
 
 	start = 0;
-	end = ft_strlen( (char *) s1) - 1;
+	end = ft_strlen( (char *) s1);
 	while (s1[start] && is_trimable((char) s1[start], (char *) set))
 		start++;
 	while (end > start &&  is_trimable((char) s1[end], (char *) set))
@@ -43,15 +43,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!ret)
 		return (NULL);
 	ii = 0;
-	while (start <= end--)
+	while (start <= end && end )
 	{
 		ret[ii] = s1[start + ii];
 		ii++;
+		end--;
 	}
 	ret[ii] = '\0';
+
 	return (ret);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -61,4 +63,13 @@ int main(void)
 
 	strcpy(s, "-   asd asd   dfgh     --");
 	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
+	strcpy(s, "    --");
+	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
+	strcpy(s, "fdb dfb  sdfb fbbb");
+	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
+	strcpy(s, "asd");
+	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
+	strcpy(s, "");
+	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
 }
+*/
