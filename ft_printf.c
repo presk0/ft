@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 14:44:37 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/06 22:33:51 by supersko         ###   ########.fr       */
+/*   Created: 2022/03/05 16:11:17 by supersko          #+#    #+#             */
+/*   Updated: 2022/03/05 16:54:56 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include "printf.h"
 
-void	*ft_calloc(unsigned int count, unsigned int size)
+int ft_printf(const char *str, ...)
 {
-	void			*ptr;
-	unsigned int	ii;
+	unsigned int num_args;
+	va_list args;
 
-	ii = 0;
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	num_args = ft_argc(str);
+	va_start(args, num_args);
 }

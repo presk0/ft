@@ -6,15 +6,15 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/05 13:30:26 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:23:37 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __HEADER_H__
 # define __HEADER_H__
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(char *str);
 void	*ft_bzero(void *s, unsigned int n);
@@ -26,12 +26,13 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 void	*ft_memchr(void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void	*ft_memcpy(void *dst, void *src, size_t n);
-void	*ft_memmove(void *dst, void *src, size_t n);
+void	*ft_memcpy(void *restrict dst, const void *restrict src, \
+			unsigned int len);
+void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t n);
 char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
+size_t	ft_strlcpy(char * dst, const char * src, size_t maxlen);
 int		ft_strlen(const char *s);
 int		ft_strncmp(char *s1, char *s2, size_t dstsize);
 char	*ft_strchr(char *s, int c);

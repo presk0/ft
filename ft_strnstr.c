@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/05 12:04:58 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:25:49 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,30 @@ char * strnstr(const char *s, const char *find, size_t slen)
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char			*haystack_cpy;
-	unsigned int	len_cpy;
+	unsigned int	len_cmp;
+	unsigned int	len_needle;
 
-	if (!ft_strlen(needle))
+	len_needle = ft_strlen(needle);
+	if (!len_needle)
 		return ((char *) haystack);
 	haystack_cpy = (char *) haystack;
-	len_cpy = len;
-	while (len_cpy--)
+	len_cmp = len;
+	if (len_needle < len_cmp)
+		len_cmp = len_needle;
+	while (len-- && *haystack_cpy)
 	{
-		if (ft_strncmp(haystack_cpy, (char *) needle, len))
+		if (ft_strncmp(haystack_cpy, (char *) needle, len_cmp))
 		{
 			haystack_cpy++;
 		}
 		else
 		{
-			return ((char *)((long unsigned int) haystack_cpy - \
-					(long unsigned int) haystack));
+			return (haystack_cpy);
 		}
 	}
 	return (NULL);
 }
+
 /*
 //
 #include <stdio.h>
@@ -89,5 +93,7 @@ int main(void)
 	test_strnstr("abc", "b", 1);
 	test_strnstr("zabcabcd", "abc", 4);
 	test_strnstr("abc", "C", 2);
+	test_strnstr("abc", "c", 3);
+	test_strnstr("abc", "a", 3);
 }
 */

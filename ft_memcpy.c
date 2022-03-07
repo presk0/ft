@@ -6,9 +6,11 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 18:34:11 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:22:27 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, \
 			unsigned int len)
@@ -16,6 +18,8 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, \
 	unsigned int	ii;
 
 	ii = 0;
+	if (len == 0 || dst == src)
+		return (dst);
 	while (ii < len)
 	{
 		((char *) dst)[ii] = ((char *) src)[ii];
@@ -23,11 +27,11 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, \
 	}
 	return (dst);
 }
+
 /*
 //
-#include "error_msg.h"
-#include <ctype.h>
 #include <string.h>
+#include <stdio.h>
 // MAIN
 int test_memcpy(char *to_cpy, int len)
 {
@@ -35,15 +39,15 @@ int test_memcpy(char *to_cpy, int len)
 	char	s2[1000];
 	int		ii = 0;
 
-	memcpy(s1, to_cpy);
-	ft_memcpy(s2, to_cpy);
+	memcpy(s1, to_cpy, len);
+	ft_memcpy(s2, to_cpy, len);
 	while (ii < len)
 	{
 		if (s1[ii] != s2[ii])
 		{
 			printf("differents output for str=[%s]\nmemcpy(str) = [%s]\n\
-			ft_memcpy(str) = [%s]\nlen/str_bufsize = %d\nbuf_size = %d\n"\
-			, str, s1, s2, len, buf_size);
+			ft_memcpy(str) = [%s]\nlen = %d\n"\
+			, to_cpy, s1, s2, len);
 			printf("\n");
 			printf("\n");
 			return (1);
@@ -61,7 +65,7 @@ int	main(int argc, char *argv[])
 	{
 		char str[ii];
 		strcpy(str, "abc\n");
-		test_memcpy(str, c, ii);
+		test_memcpy(str, ii);
 		ii++;
 	}
 	ii = 0;
@@ -69,9 +73,8 @@ int	main(int argc, char *argv[])
 	{
 		char str[ii];
 		strcpy(str, "");
-		test_memcpy(str, c, ii);
+		test_memcpy(str, ii);
 		ii++;
 	}
-	printf("can be a good job ;)\n");
 }
 */

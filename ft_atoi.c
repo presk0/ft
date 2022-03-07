@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/02 18:30:53 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:39:04 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,22 @@ static int	c_to_i(char c)
 
 int	ft_atoi(char *str)
 {
-	unsigned int	ii;
 	long int		sign;
 	long int		nbr;
 
-	ii = 0;
 	sign = 1;
-	while (ft_isspace(str[ii]))
-		ii++;
-	if (str[ii] == '-' || str [ii] == '+')
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[ii] == '-')
+		if (*str++ == '-')
 			sign *= -1;
-		ii++;
 	}
 	nbr = 0;
-	while (ft_isdigit(str[ii]))
+	while (ft_isdigit(*str))
 	{
 		nbr *= 10;
-		nbr += c_to_i(str[ii]);
-		ii++;
+		nbr += (long int) c_to_i(*str++);
 	}
 	return ((int)(sign * nbr));
 }
