@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/08 13:47:04 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/08 13:49:24 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char	**ft_split(char const *s, char c)
 	return (ret);
 }
 
+/*
 //
 #include <string.h>
 #include <stdio.h>
@@ -134,7 +135,6 @@ int main(void)
 	while (sortie[ii] != NULL)
 		 printf("%s\n", sortie[ii++]); 
 
-/*
 	char s[10];
 	strcpy(s, "");
 	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
@@ -152,5 +152,5 @@ int main(void)
 	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
 	strcpy(s, "bb   bb");
 	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
-*/
 }
+*/
