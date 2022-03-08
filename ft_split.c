@@ -6,14 +6,14 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/07 20:01:43 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/08 13:47:04 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static unsigned int	ft_strlench(char const *s, char c)
+static unsigned int	ft_strlen_char(char const *s, char c)
 {
 	unsigned int	ii;
 
@@ -52,9 +52,9 @@ static unsigned int	ft_wdcnt(char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char			**ret;
-	unsigned int	i_let;
 	unsigned int	i_wd;
 	unsigned int	nb_wd;
+	unsigned int	wd_len;
 
 	if (!s)
 		return (NULL);
@@ -65,40 +65,71 @@ char	**ft_split(char const *s, char c)
 	i_wd = 0;
 	while (i_wd < nb_wd)
 	{
-		ret[i_wd] = (char *) malloc(sizeof(char) * (ft_strlench(s, c) + 1));
-		if (!ret[i_wd])
-			return (NULL);
-//		printf("len %u\n", ft_strlench(s, c));
-		i_let = 0;
-		while (*s && *s != c)
-			ret[i_wd][i_let++] = *s++;
-//		printf("let %u\n", i_let);
-		ret[i_wd][i_let] = '\0';
-		while (*s == c)
+		while (ft_strlen_char(s, c) == 0)
 			s++;
+		wd_len = ft_strlen_char(s, c);
+		if (wd_len != 0)
+		{
+			ret[i_wd] = (char *) malloc(sizeof(char) * (++wd_len));
+			if (!ret[i_wd])
+				return (NULL);
+		}
+		ft_strlcpy(ret[i_wd], s, wd_len);
+		ret[i_wd][wd_len] = '\0';
+		s += wd_len;
 		i_wd++;
 	}
 	ret[nb_wd] = (char *) NULL;
 	return (ret);
 }
+
+//
 #include <string.h>
+#include <stdio.h>
 // MAIN
+
+void put_header(void)
+{
+	printf("****************************************************\n");
+}
+
 int main(void)
 {
 	char	**sortie;
 	int		ii;
 
+	put_header();
 	sortie = ft_split("Phrase de      test", ' ');
 	ii = 0;
 	while (sortie[ii] != NULL)
 		 printf("%s\n", sortie[ii++]); 
 
-	sortie = ft_split("P", '');
+	put_header();
+	sortie = ft_split("P", ' ');
 	ii = 0;
 	while (sortie[ii] != NULL)
 		 printf("%s\n", sortie[ii++]); 
 
+	put_header();
 	sortie = ft_split("", ' ');
+	ii = 0;
+	while (sortie[ii] != NULL)
+		 printf("%s\n", sortie[ii++]); 
+
+	put_header();
+	sortie = ft_split(" a ", ' ');
+	ii = 0;
+	while (sortie[ii] != NULL)
+		 printf("%s\n", sortie[ii++]); 
+
+	put_header();
+	sortie = ft_split(" a", ' ');
+	ii = 0;
+	while (sortie[ii] != NULL)
+		 printf("%s\n", sortie[ii++]); 
+
+	put_header();
+	sortie = ft_split("a ", ' ');
 	ii = 0;
 	while (sortie[ii] != NULL)
 		 printf("%s\n", sortie[ii++]); 
