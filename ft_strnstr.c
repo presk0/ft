@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/09 18:12:35 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/09 19:06:05 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char			*haystack_cpy;
-	unsigned int	len_cmp;
 	unsigned int	len_needle;
+	unsigned int	ii;
+	unsigned int	jj;
 
-	len_needle = ft_strlen(needle);
-	if (!haystack || !needle)
+	if (!haystack)
 		return (NULL);
+	len_needle = ft_strlen(needle);
 	if (!len_needle)
 		return ((char *) haystack);
-	haystack_cpy = (char *) haystack;
-	len_cmp = len;
-	if (len_needle < len_cmp)
-		len_cmp = len_needle;
-	while (len-- >= len_needle && *haystack_cpy)
+	if (len < len_needle)
+		return (NULL);
+	else
+		len -= len_needle - 1;
+	ii = 0;
+	while (ii < len && haystack[ii])
 	{
-		if (ft_strncmp(haystack_cpy, (char *) needle, len_cmp))
-		{
-			haystack_cpy++;
-		}
+		jj = 0;
+		while (needle[jj] == haystack[ii + jj] && haystack[ii + jj] && jj < len_needle)
+			jj++;
+		if (jj == len_needle)
+			return ((char *) haystack + ii);
 		else
-		{
-			return (haystack_cpy);
-		}
+			ii++;
 	}
 	return (NULL);
 }
@@ -78,5 +78,6 @@ int main(void)
 		test_strnstr("zabc", "abc", i);
 		test_strnstr("abcz", "abc", i);
 	}
+		test_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", 99);
 }
 */
