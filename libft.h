@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/07 16:23:37 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:43:23 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 void	*ft_memchr(void *s, int c, size_t n);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_memcmp(void *s1, void *s2, size_t n);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, \
 			unsigned int len);
 void	*ft_memmove(void *dest, const void *src, size_t len);

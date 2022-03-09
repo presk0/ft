@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/07 18:09:46 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/09 17:34:42 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*newstr;
+	char	*substr;
 	char	*return_val;
 
+	substr = (char *) malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
 	while (start--)
 		if (!*s++)
+		{
+			substr[0] = '\0';
 			return (NULL);
-	newstr = (char *) malloc(sizeof(char) * (len + 1));
-	if (!newstr)
-		return (NULL);
-	return_val = newstr;
+		}
+	return_val = substr;
 	while (len-- && *s)
 	{
-		*newstr++ = *s++;
+		*substr++ = *s++;
 	}
-	*newstr = '\0';
+	*substr = '\0';
 	return (return_val);
 }
 
