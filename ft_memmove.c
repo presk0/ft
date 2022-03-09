@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/07 15:58:34 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/09 14:40:39 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned int	ii;
 
 	ii = 0;
+	if (!dst && !src)
+		return (NULL);
 	if (dst < src)
 	{
 		while (ii < len)
@@ -38,29 +40,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 /*
 //
-//Ne fait pas la diff avec memcpy
-#include "error_msg.h"
-#include <ctype.h>
 #include <string.h>
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int	ii;
-// MAIN
-	ii = 0;
-	while (ii < n)
-	{
-		if (s1[ii] == s2[ii]) 
-		{
-			if (s1[ii] == '\0')
-				return (0);
-			ii++;
-		}
-		else
-			return (s1[ii] - s2[ii]);
-	}
-	return (0);
-}
-	
+#include <stdio.h>
 int test_memmove(int len)
 {
 	char	s1[] = "0123456789";
@@ -118,6 +99,5 @@ int	main(int argc, char *argv[])
 		test_memmove(ii);
 		ii++;
 	}
-	printf("can be a good job ;)\n");
 }
 */

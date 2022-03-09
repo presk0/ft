@@ -6,32 +6,27 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/03 17:50:43 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/09 14:51:42 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(unsigned char *s1, unsigned char *s2, unsigned int n)
-{
-	unsigned int	ii;
+#include "libft.h"
 
-	ii = 0;
-	while (ii < n)
+int	ft_strncmp(char *s1, char *s2, size_t n)
+{
+	while (n--)
 	{
-		if (s1[ii] == s2[ii])
-		{
-			if (s1[ii] == '\0')
-				return (0);
-			ii++;
-		}
-		else
-			return (s1[ii] - s2[ii]);
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
 	return (0);
 }
-/*
+
 //
-#include "error_msg.h"
 #include <string.h>
+#include <stdio.h>
 // MAIN
 int test_strncmp(char *s1, char *s2, int len)
 {
@@ -41,7 +36,7 @@ int test_strncmp(char *s1, char *s2, int len)
 		return (1);
 	else
 	{
-		printf("[BUG]\ns1 = %s, s2 %s\nstrncmp = %d\nft_strncmp = %d\n\
+		printf("[BUG]\ns1 = [%s], \ns2 [%s]\nstrncmp = %d\nft_strncmp = %d\n\
 		len = %d\n\n", s1, s2, strncmp(s1, s2, len), ft_strncmp(s1, s2, len), len);
 		return (0);
 	}
@@ -56,28 +51,28 @@ int	main(int argc, char *argv[])
 
 	while (ii < 5)
 	{
-		strcpy(s1, "abc");
-		strcpy(s2, "abc");
+		strcpy(s1, "a");
+		strcpy(s2, "a");
 		test_strncmp(s1, s2, ii);
 
-		strcpy(s1, "abc");
+		strcpy(s1, "a");
 		strcpy(s2, "");
 		test_strncmp(s1, s2, ii);
 
 		strcpy(s1, "");
-		strcpy(s2, "abc");
+		strcpy(s2, "a");
 		test_strncmp(s1, s2, ii);
 
-		strcpy(s1, "abz");
-		strcpy(s2, "abcfghdfgh");
+		strcpy(s1, "a");
+		strcpy(s2, "ab");
 		test_strncmp(s1, s2, ii);
 
-		strcpy(s1, "abcfghdfgh");
-		strcpy(s2, "abz");
+		strcpy(s1, "ab");
+		strcpy(s2, "az");
 		test_strncmp(s1, s2, ii);
 
-		strcpy(s1, "abcfgz");
-		strcpy(s2, "abcfghdfgh");
+		strcpy(s1, "bc");
+		strcpy(s2, "ac");
 		test_strncmp(s1, s2, ii);
 
 		strcpy(s1, "abcfghdfgh");
@@ -87,4 +82,3 @@ int	main(int argc, char *argv[])
 	}
 	printf("can be a good job ;)\n");
 }
-*/
