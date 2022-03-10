@@ -6,12 +6,38 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/07 17:39:04 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:59:15 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int		ft_atoi(char *str)
+{
+	int		i;
+	int		num;
+	int		sign;
+
+	i = 0;
+	num = 0;
+	sign = 1;
+	while (*(str + i) == '\n' ||
+		*(str + i) == '\t' ||
+		*(str + i) == '\r' ||
+		*(str + i) == '\v' ||
+		*(str + i) == '\f' ||
+		*(str + i) == ' ')
+		i++;
+	if (*(str + i) == '-')
+		sign = -1;
+	if (*(str + i) == '-' || *(str + i) == '+')
+		i++;
+	while (*(str + i) && *(str + i) >= '0' && *(str + i) <= '9')
+		num = num * 10 + (*(str + i++) - '0');
+	return (num * sign);
+}
+
+/*
 static int	ft_isspace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' || \
@@ -21,33 +47,31 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-static int	c_to_i(char c)
+static long int	c_to_i(char c)
 {
-	return ((int) c - (int) '0');
+	return ((long int) c - (long int) '0');
 }
 
 int	ft_atoi(char *str)
 {
-	long int		sign;
-	long int		nbr;
+	int			sign;
+	long int	nbr;
 
 	sign = 1;
 	while (ft_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')
-	{
 		if (*str++ == '-')
 			sign *= -1;
-	}
 	nbr = 0;
 	while (ft_isdigit(*str))
 	{
 		nbr *= 10;
 		nbr += (long int) c_to_i(*str++);
 	}
-	return ((int)(sign * nbr));
+	return (sign * nbr);
 }
-
+*/
 /*
 //
 #include <stdio.h>
