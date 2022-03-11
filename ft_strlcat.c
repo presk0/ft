@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 12:08:18 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/05 12:08:20 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 18:23:47 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ static unsigned int	ft_strnlen(char *s, size_t max)
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	dstr_len;
+	size_t	dstr_len;
 
 	dstr_len = ft_strnlen(dst, dstsize);
 	if (dstr_len == dstsize)
 		return (dstr_len + ft_strlen(src));
-	return (dstr_len + \
-			ft_strlcpy(dst + dstr_len, (char *) src, dstsize - dstr_len));
+	return (dstr_len + ft_strlcpy(dst + dstr_len,
+			(char *) src, dstsize - dstr_len));
 }
 /*
 //

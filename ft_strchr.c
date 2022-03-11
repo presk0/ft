@@ -6,28 +6,34 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 13:54:51 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 18:54:49 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	ii;
 
-	ii = 0;
-	while (s[ii] != '\0')
+	if (s)
 	{
-		if (s[ii] == c)
+		ii = 0;
+		while (s[ii] != '\0')
 		{
-			return (s + ii);
+			if (s[ii] == c)
+			{
+				return ((char *)(s + ii));
+			}
+			ii++;
 		}
-		ii++;
+		if (c == '\0')
+			return (s + ii);
+		else
+			return (NULL);
 	}
-	if (c == '\0')
-		return (s + ii);
-	else
-		return (0);
 }
+
 /*
 //
 #include "error_msg.h"
@@ -38,6 +44,7 @@ char	*ft_strchr(char *s, int c)
 int test_strchr(char *str, char c)
 {
 	unsigned int ret;
+	}
 
 	ret = strchr(str, c) - ft_strchr(str, c);
 	if (ret)

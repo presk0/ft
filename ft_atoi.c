@@ -6,37 +6,13 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 16:45:05 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 18:30:16 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str0)
-{
-	int		i;
-	int		num;
-	int		sign;
-	char	*str;
-
-	i = 0;
-	num = 0;
-	sign = 1;
-	str = (char *)str0;
-	while (*(str + i) == '\n' || *(str + i) == '\t' || *(str + i) == '\r'
-		|| *(str + i) == '\v' || *(str + i) == '\f' || *(str + i) == ' ')
-		i++;
-	if (*(str + i) == '-')
-		sign = -1;
-	if (*(str + i) == '-' || *(str + i) == '+')
-		i++;
-	while (*(str + i) && *(str + i) >= '0' && *(str + i) <= '9')
-		num = num * 10 + (*(str + i++) - '0');
-	return (num * sign);
-}
-
-/*
-static int	ft_isspace(char c)
+static int	ft_isspace(const char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' || \
 		c == '\f' || c == '\r' || c == ' ')
@@ -50,12 +26,14 @@ static long int	c_to_i(char c)
 	return ((long int) c - (long int) '0');
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str0)
 {
 	int			sign;
 	long int	nbr;
+	char		*str;
 
 	sign = 1;
+	str = (char *)str0;
 	while (ft_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')
@@ -69,7 +47,7 @@ int	ft_atoi(char *str)
 	}
 	return (sign * nbr);
 }
-*/
+
 /*
 //
 #include <stdio.h>

@@ -6,11 +6,13 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/01 14:27:56 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 18:31:07 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	*ft_bzero(void *s, size_t n)
 {
 	unsigned int	ii;
 
