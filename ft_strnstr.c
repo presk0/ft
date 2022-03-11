@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/10 14:55:08 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:07:02 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ char	*ft_strnstr(const char *str, const char *ndl, size_t len)
 		{
 			i_cmp = i_str;
 			found = 1;
-			while (*(str + i_cmp) && *(ndl + i_ndl) && i_ndl < len && i_cmp < len)
+			while (*(str + i_cmp) && *(ndl + i_ndl) && \
+				i_ndl < len && i_cmp < len)
 				if (*(str + i_cmp++) != *(ndl + i_ndl++))
 					found = 0;
 			if (found && !*(ndl + i_ndl))

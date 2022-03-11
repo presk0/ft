@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/08 13:49:24 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 15:54:58 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,11 @@ static unsigned int	ft_wdcnt(char *s, char c)
 	return (count);
 }
 
-// Desole pour la conversion de char en string
-char	**ft_split(char const *s, char c)
+char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 {
-	char			**ret;
 	unsigned int	i_wd;
-	unsigned int	nb_wd;
 	unsigned int	wd_len;
 
-	if (!s)
-		return (NULL);
-	nb_wd = ft_wdcnt((char *) s, c);
-	ret = (char **) malloc((nb_wd + 1) * sizeof(char *));
-	if (!ret)
-		return (NULL);
 	i_wd = 0;
 	while (i_wd < nb_wd)
 	{
@@ -79,6 +70,22 @@ char	**ft_split(char const *s, char c)
 		s += wd_len;
 		i_wd++;
 	}
+	return (ret);
+}
+
+// Desole pour la conversion de char en string
+char	**ft_split(char const *s, char c)
+{
+	char			**ret;
+	unsigned int	nb_wd;
+
+	if (!s)
+		return (NULL);
+	nb_wd = ft_wdcnt((char *) s, c);
+	ret = (char **) malloc((nb_wd + 1) * sizeof(char *));
+	if (!ret)
+		return (NULL);
+	ret = make_tab(ret, s, c, nb_wd);
 	ret[nb_wd] = (char *) NULL;
 	return (ret);
 }

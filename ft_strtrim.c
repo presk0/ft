@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:33:46 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/10 16:24:44 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 15:15:31 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ret);
 }
 
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -70,3 +71,4 @@ int main(void)
 	strcpy(s, "");
 	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
 }
+*/
