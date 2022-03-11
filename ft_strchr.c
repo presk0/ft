@@ -6,18 +6,20 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:54:49 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 19:47:01 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s0, int c)
 {
 	unsigned int	ii;
+	char			*s;
 
-	if (s)
+	if (s0)
 	{
+		s = (char *)s0;
 		ii = 0;
 		while (s[ii] != '\0')
 		{
@@ -32,6 +34,7 @@ char	*ft_strchr(const char *s, int c)
 		else
 			return (NULL);
 	}
+	return (NULL);
 }
 
 /*
