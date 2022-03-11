@@ -6,14 +6,13 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/07 15:22:27 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:35:52 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, \
-			unsigned int len)
+void	*ft_memcpy(void *dst, const void *src, unsigned int len)
 {
 	unsigned int	ii;
 

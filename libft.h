@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/10 18:27:36 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:46:39 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 void	*ft_bzero(void *s, unsigned int n);
 void	*ft_calloc(unsigned int count, unsigned int size);
 int		ft_isalnum(int c);
@@ -26,8 +26,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 void	*ft_memchr(void *s, int c, size_t n);
 int		ft_memcmp(void *s1, void *s2, size_t n);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, \
-			unsigned int len);
+void	*ft_memcpy(void *dst, const void *src, unsigned int len);
 void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t n);
 char	*ft_strdup(const char *s);
