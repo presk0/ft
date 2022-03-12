@@ -6,12 +6,24 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 19:47:01 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:28:33 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_strchr(const char *str, int c)
+{
+	while (*str != (char)c)
+	{
+		if (!*str)
+			return (NULL);
+		str++;
+	}
+	return ((char *)str);
+}
+
+/*
 char	*ft_strchr(const char *s0, int c)
 {
 	unsigned int	ii;
@@ -36,6 +48,7 @@ char	*ft_strchr(const char *s0, int c)
 	}
 	return (NULL);
 }
+*/
 
 /*
 //
