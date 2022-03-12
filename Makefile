@@ -22,6 +22,8 @@ NAME = libft.a
 
 HEADER = libft.h
 
+CFLAGS = -Wall -Wextra -Werror
+
 CC = gcc
 
 all: $(NAME)
