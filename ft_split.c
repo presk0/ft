@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 21:12:05 by supersko         ###   ########.fr       */
+/*   Updated: 2022/03/17 14:44:04 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 		wd_len = ft_strlen_char(s, c);
 		if (wd_len != 0)
 		{
-			ret[i_wd] = (char *) malloc(sizeof(char) * (++wd_len));
+			ret[i_wd] = (char *) malloc(sizeof(char) * (wd_len + 1));
 			if (!ret[i_wd])
 				return (NULL);
 		}
-		ft_strlcpy(ret[i_wd], s, --wd_len);
+		ft_strlcpy(ret[i_wd], s, wd_len + 1);
 		ret[i_wd][wd_len] = '\0';
 		s += wd_len;
 		i_wd++;
