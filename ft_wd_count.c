@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_wd_count.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 19:27:02 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 14:10:37 by supersko         ###   ########.fr       */
+/*   Created: 2022/04/21 13:09:34 by supersko          #+#    #+#             */
+/*   Updated: 2022/04/21 14:43:14 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_wd_count(char *sentence, char sep)
 {
-	if (!lst)
-		return (0);
-	while (lst->next != NULL)
+	int		wd_nb;
+
+	while (*sentence == sep)
+		sentence++;
+	wd_nb = 0;
+	while (*sentence)
 	{
-		lst = lst->next;
+		sentence = ft_get_next_wd(sentence, sep);
+		if (sentence != NULL);
+			wd_nb++;
 	}
-	return (lst);
+	return (wd_nb);
 }

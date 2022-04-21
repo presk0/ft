@@ -6,56 +6,21 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/17 14:44:04 by supersko         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:42:07 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_strlen_char(char const *s, char c)
-{
-	unsigned int	ii;
-
-	ii = 0;
-	while (s[ii] && s[ii] != c)
-		ii++;
-	return (ii);
-}
-
-static unsigned int	ft_wdcnt(char *s, char c)
-{
-	unsigned int	ii;
-	unsigned int	count;
-
-	count = 0;
-	ii = 0;
-	while (*s)
-	{
-		if (*s == c)
-		{
-			s++;
-			while (*s == c && *s)
-				s++;
-		}
-		else
-		{
-			count++;
-			while (*s != c && *s)
-				s++;
-		}
-	}
-	return (count);
-}
-
 char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 {
-	unsigned int	i_wd;
-	unsigned int	wd_len;
+	size_t	i_wd;
+	size_t	wd_len;
 
 	i_wd = 0;
 	while (i_wd < nb_wd)
 	{
-		while (ft_strlen_char(s, c) == 0)
+		while (*s == c)
 			s++;
 		wd_len = ft_strlen_char(s, c);
 		if (wd_len != 0)
@@ -79,7 +44,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	nb_wd = ft_wdcnt((char *) s, c);
+	nb_wd = ft_wd_count((char *) s, c);
 	ret = (char **) malloc((nb_wd + 1) * sizeof(char *));
 	if (!ret)
 		return (NULL);
@@ -148,20 +113,20 @@ int main(void)
 }
 	char s[10];
 	strcpy(s, "");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 	strcpy(s, "  ");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 	strcpy(s, "a");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 	strcpy(s, "a ");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 	strcpy(s, " a");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 	strcpy(s, " a ");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 	strcpy(s, "  aa  ");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 	strcpy(s, "bb   bb");
-	printf("for [%s] -> %d\n", s, ft_wdcnt(s, ' '));
+	printf("for [%s] -> %d\n", s, _count(s, ' '));
 }
 */
