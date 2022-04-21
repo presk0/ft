@@ -6,30 +6,30 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 13:09:34 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 15:42:46 by supersko         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:53:23 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wd_count(char *sentence, char sep)
+int	ft_wd_count(char *str, char sep)
 {
 	int		wd_nb;
 
-	if (sentence)
+	wd_nb = 0;
+	if (str)
 	{
-		while (*sentence == sep)
-			sentence++;
-		wd_nb = 0;
-		while (*sentence)
+		while (*str == sep)
+			str++;
+		while (*str)
 		{
-			sentence = ft_get_next_wd(sentence, sep);
-			if (sentence != NULL)
+			str = ft_get_next_wd(str, sep);
+			if (str != NULL)
 				wd_nb++;
 		}
 	}
 	else
-		error_msg("str == NULL in wc sentence");
+		error_msg("str == NULL in wc str");
 	return (wd_nb);
 }
 
