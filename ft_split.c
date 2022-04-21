@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 15:55:01 by supersko         ###   ########.fr       */
+/*   Updated: 2022/04/21 19:19:56 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	**ft_split(char const *s, char c)
 	if (!ret)
 		return (NULL);
 	ret = make_tab(ret, s, c, nb_wd);
-	ret[nb_wd] = (char *) NULL;
+	ret[nb_wd] = NULL;
 	return (ret);
 }
 
