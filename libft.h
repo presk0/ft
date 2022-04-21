@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 15:34:09 by supersko         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:42:24 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-char    *ft_get_next_wd(char *sentence, char sep);
+char	*ft_get_next_wd(char *sentence, char sep);
 int		ft_wd_count(char *sentence, char sep);
-size_t  ft_strlen_char(char *str, char sep);
-void    error_msg(char *msg);
+size_t	ft_strlen_char(char *str, char sep);
+void	error_msg(char *msg);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 13:09:34 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 15:29:43 by supersko         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:42:46 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ int	ft_wd_count(char *sentence, char sep)
 				wd_nb++;
 		}
 	}
+	else
+		error_msg("str == NULL in wc sentence");
 	return (wd_nb);
 }
 
+/*
 #include <stdio.h>
 int main()
 {
@@ -44,6 +47,4 @@ int main()
 	printf("%d\n", ft_wd_count(" a a", ' '));
 	printf("%d\n", ft_wd_count(" a a ", ' '));
 }
-
-/*
 */
