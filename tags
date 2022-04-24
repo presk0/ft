@@ -1,11 +1,12 @@
-Mft_strlenc_char	ft_strlenc_char.c	/^int main()$/
 c_to_i	ft_atoi.c	/^static long int	c_to_i(char c)$/
 carry_negative	ft_itoa.c	/^static char	*carry_negative(int *n, char *n_strn, /
+error_msg	error_msg.c	/^void	error_msg(char *msg)$/
 ft_atoi	ft_atoi.c	/^int	ft_atoi(const char *str0)$/
 ft_bzero	ft_bzero.c	/^void	*ft_bzero(void *s, size_t n)$/
 ft_calloc	ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/
 ft_get_next_wd	ft_get_next_wd.c	/^char	*ft_get_next_wd(char *sentence, char sep)$/
 ft_intlen	ft_itoa.c	/^static int	ft_intlen(int n)$/
+ft_is_flag	ft_printf.c	/^static int	ft_is_flag(char c)$/
 ft_isalnum	ft_isalnum.c	/^int	ft_isalnum(int c)$/
 ft_isalpha	ft_isalpha.c	/^int	ft_isalpha(int c)$/
 ft_isascii	ft_isascii.c	/^int	ft_isascii(int c)$/
@@ -18,10 +19,21 @@ ft_memcmp	ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size/
 ft_memcpy	ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, unsign/
 ft_memmove	ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_/
 ft_memset	ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/
+ft_print_addr	ft_print_hexa.c	/^size_t	ft_print_addr(void *num)$/
+ft_print_arg	ft_printf.c	/^static size_t	ft_print_arg(va_list *ap, char *afte/
+ft_print_hexa	ft_print_hexa.c	/^size_t	ft_print_hexa(long long unsigned int num, c/
+ft_print_int	ft_print_int.c	/^size_t	ft_print_int(int num)$/
+ft_print_str	ft_print_chars.c	/^size_t	ft_print_str(char *str)$/
+ft_print_unsigned	ft_print_int.c	/^size_t	ft_print_unsigned(unsigned int num)$/
+ft_printf	ft_printf.c	/^int	ft_printf(const char *str0, ...)$/
 ft_putchar_fd	ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/
 ft_putendl_fd	ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/
 ft_putnbr_fd	ft_putnbr_fd.c	/^void	ft_putnbr_fd(int n, int fd)$/
 ft_putstr_fd	ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/
+ft_recursive_print_addr	ft_print_hexa.c	/^void	ft_recursive_print_addr(long long unsigned in/
+ft_recursive_print_hexa	ft_print_hexa.c	/^void	ft_recursive_print_hexa(long long unsigned in/
+ft_recursive_print_int	ft_print_int.c	/^size_t	ft_recursive_print_int(int num, size_t *len/
+ft_recursive_print_unsigned	ft_print_int.c	/^size_t	ft_recursive_print_unsigned(unsigned int nu/
 ft_split	ft_split.c	/^char	**ft_split(char const *s, char c)$/
 ft_strchr	ft_strchr.c	/^char	*ft_strchr(const char *str, int c)$/
 ft_strdup	ft_strdup.c	/^char	*ft_strdup(const char *s1)$/
@@ -30,7 +42,7 @@ ft_strjoin	ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/
 ft_strlcat	ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, size/
 ft_strlcpy	ft_strlcpy.c	/^size_t	ft_strlcpy(char *dst, const char *src, size/
 ft_strlen	ft_strlen.c	/^size_t	ft_strlen(const char *str)$/
-ft_strlen_char	ft_strlenc_char.c	/^size_t	ft_strlen_char(char *str, char sep)$/
+ft_strlen_char	ft_strlen_char.c	/^size_t	ft_strlen_char(char *str, char sep)$/
 ft_strmapi	ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned/
 ft_strncmp	ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, siz/
 ft_strnlen	ft_strlcat.c	/^static unsigned int	ft_strnlen(char *s, size_t max/
@@ -40,8 +52,9 @@ ft_strtrim	ft_strtrim.c	/^char	*ft_strtrim(char const *s1, char const *set)$/
 ft_substr	ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start,/
 ft_tolower	ft_tolower.c	/^int	ft_tolower(int c)$/
 ft_toupper	ft_toupper.c	/^int	ft_toupper(int c)$/
-ft_wd_count	ft_wd_count.c	/^int	ft_wd_count(char *sentence, char sep)$/
+ft_wd_count	ft_wd_count.c	/^int	ft_wd_count(char *str, char sep)$/
 is_trimable	ft_strtrim.c	/^static int	is_trimable(char c, char *trimset)$/
 make_str	ft_itoa.c	/^static void	make_str(int *n, char *n_str, int i)$/
 make_tab	ft_split.c	/^char	**make_tab(char **ret, char const *s, char c,/
 my_loc	ft_itoa.c	/^static char	*my_loc(int len)$/
+printing_loop	ft_printf.c	/^size_t	printing_loop(char *str, va_list *ap)$/

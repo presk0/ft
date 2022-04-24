@@ -6,29 +6,44 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 16:04:25 by supersko         ###   ########.fr       */
+/*   Updated: 2022/04/24 18:19:52 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t maxlen)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	src_len;
 
-	src_len = ft_strlen(src);
-	if (src_len + 1 < maxlen)
+	src_len = 0;
+	while (src[src_len])
+		src_len++;
+	while (*src && (dstsize-- - 1))
 	{
-		ft_memcpy(dst, src, src_len + 1);
+		*(dst++) = *(src++);
 	}
-	else if (maxlen != 0)
-	{
-		ft_memcpy(dst, src, maxlen - 1);
-		dst[maxlen - 1] = '\0';
-	}
+	*dst = '\0';
 	return (src_len);
 }
 
+//size_t	ft_strlcpy(char *dst, const char *src, size_t maxlen)
+//{
+//	size_t	src_len;
+//
+//	src_len = ft_strlen(src);
+//	if (src_len + 1 < maxlen)
+//	{
+//		ft_memcpy(dst, src, src_len + 1);
+//	}
+//	else if (maxlen != 0)
+//	{
+//		ft_memcpy(dst, src, maxlen - 1);
+//		dst[maxlen - 1] = '\0';
+//	}
+//	return (src_len);
+//}
+//
 /*
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
