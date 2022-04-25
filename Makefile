@@ -6,7 +6,7 @@
 #    By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2022/04/24 20:25:03 by supersko         ###   ########.fr        #
+#    Updated: 2022/04/25 18:33:06 by supersko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ CC = gcc
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rcs $@ $?
-	make clean
+#	ar rcs $@ $?
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $<
