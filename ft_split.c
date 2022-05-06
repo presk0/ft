@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
+static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 {
 	size_t	i_wd;
 	size_t	wd_len;

@@ -14,6 +14,26 @@
 
 char	*ft_strrchr(char *s, int c)
 {
+	char *found;
+	char *p;
+
+	c = (unsigned char) c;
+	/* Since ft_strchr is fast, we use it rather than the obvious loop.  */
+	if (c == '\0')
+	  return (ft_strchr(s, '\0'));
+	found = NULL;
+	p = ft_strchr(s, c);
+	while (p != NULL)
+		{
+			p = ft_strchr(s, c);
+			found = p;
+			s = p + 1;
+		}
+	return (found);
+}
+
+/*
+{
 	unsigned int	ii;
 	int				absent;
 
@@ -40,6 +60,8 @@ char	*ft_strrchr(char *s, int c)
 	}
 	return (0);
 }
+*/
+
 /*
 //
 #include "error_msg.h"
