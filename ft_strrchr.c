@@ -31,7 +31,7 @@ char	*ft_strrchr(char *s, int c)
 		return (0);
 	else
 	{
-		while (ii >= 0)
+		while (1)
 		{
 			if (s[ii] == c)
 				return (s + ii);
