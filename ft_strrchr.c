@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:54:16 by supersko         ###   ########.fr       */
+/*   Updated: 2022/05/07 18:37:35 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 char	*ft_strrchr(char *s, int c)
 {
-	char *found;
-	char *p;
+	char	*found;
+	char	*p;
 
 	c = (unsigned char) c;
-	/* Since ft_strchr is fast, we use it rather than the obvious loop.  */
 	if (c == '\0')
-	  return (ft_strchr(s, '\0'));
+		return (ft_strchr(s, '\0'));
 	found = NULL;
 	p = ft_strchr(s, c);
 	while (p != NULL)
-		{
-			p = ft_strchr(s, c);
-			found = p;
-			s = p + 1;
-		}
+	{
+		p = ft_strchr(s, c);
+		found = p;
+		s = p + 1;
+	}
 	return (found);
 }
 

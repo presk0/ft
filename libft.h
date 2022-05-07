@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/27 21:30:42 by supersko         ###   ########.fr       */
+/*   Updated: 2022/05/07 18:38:50 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <unistd.h>
 
 size_t	ft_strlen_char(char *str, char sep);
-int     ft_wd_count(char *str, char sep);
-int     ft_atoi_arg(char *str_nb);
+int		ft_wd_count(char *str, char sep);
+int		ft_atoi_arg(char *str_nb);
 char	*ft_get_next_wd(char *sentence, char sep);
 void	error_msg(char *msg);
 char	**ft_split(char const *s, char c);
@@ -32,16 +32,16 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-int     ft_atoi(const char *str0);
-int     ft_isalnum(int c);
-int     ft_isalpha(int c);
-int     ft_isascii(int c);
-int     ft_isdigit(int c);
-int     ft_isprint(int c);
-int     ft_memcmp(const void *s1, const void *s2, size_t n);
-int     ft_strncmp(const char *s1, const char *s2, size_t n);
-int     ft_tolower(int c);
-int     ft_toupper(int c);
+int		ft_atoi(const char *str0);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
