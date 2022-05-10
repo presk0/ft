@@ -6,14 +6,14 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:13:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/05/07 18:34:46 by supersko         ###   ########.fr       */
+/*   Updated: 2022/05/10 21:00:06 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // return error if the arg is not an int
-int	ft_atoi_arg(char *str_nb)
+int	ft_atoi_err(char *str_nb)
 {
 	int	nb;
 	int	sign;
