@@ -6,11 +6,11 @@
 #    By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2022/04/27 21:34:37 by supersko         ###   ########.fr        #
+#    Updated: 2022/05/11 17:55:06 by supersko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = error_msg.c ft_atoi.c ft_atoi_arg.c ft_bzero.c ft_calloc.c \
+SRCS = error_msg.c ft_atoi.c ft_atoi_err.c ft_bzero.c ft_calloc.c \
 	ft_get_next_wd.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c \
 	ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
