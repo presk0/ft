@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_err.c                                      :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:13:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/05/11 18:19:21 by supersko         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:47:55 by supersko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_free_split(char **tab)
+void	ft_free_split(char **tab)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (tab[i])
-    {
-        free(tab[i++]);
-    }
-    free(tab);
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i++]);
+	}
+	free(tab);
 }
