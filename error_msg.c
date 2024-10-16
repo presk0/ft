@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 13:09:34 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 15:36:27 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:56:20 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	error_msg(char *msg)
 		write(2, "Error\n", 6);
 	else
 		write(2, msg, ft_strlen(msg));
-	exit (-1);
 }

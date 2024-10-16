@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 13:09:34 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 15:53:23 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:19:23 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_wd_count(char *str, char sep)
 	int		wd_nb;
 
 	wd_nb = 0;
-	if (str)
+	if (str && sep)
 	{
 		while (*str == sep)
 			str++;

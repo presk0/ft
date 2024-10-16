@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 14:44:37 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/16 13:46:46 by nidionis         ###   ########.fr       */
+/*   Created: 2022/03/04 10:36:39 by supersko          #+#    #+#             */
+/*   Updated: 2024/10/15 11:45:06 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "limits.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	void					*ptr;
-	long long unsigned int	fact;
+	t_list	*new;
 
-	fact = count * size;
-	if (fact > 4294967295)
+	new = (t_list *) malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

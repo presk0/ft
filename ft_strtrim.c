@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:33:46 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 15:15:31 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:08:59 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	*new_str = '\0';
 	return (ret);
 }
-
 /*
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
+int main(int argc, char **argv)
 {
-	char s[100];
-
-	strcpy(s, "- a a -");
-	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
-	strcpy(s, "    --");
-	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
-	strcpy(s, "f f");
-	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
-	strcpy(s, "a");
-	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
-	strcpy(s, "");
-	printf("[%s] -> [%s]\n", s, ft_strtrim(s, " -"));
+	printf("%s\n", ft_strtrim(argv[1], argv[2]));
 }
 */

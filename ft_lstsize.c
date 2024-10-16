@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/16 13:18:29 by nidionis         ###   ########.fr       */
+/*   Created: 2022/03/04 10:36:39 by supersko          #+#    #+#             */
+/*   Updated: 2024/10/15 11:45:06 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+int	ft_lstsize(t_list *lst)
 {
-	while (*str != (char)c)
+	unsigned int	len;
+
+	if (lst == NULL)
+		return (0);
+	len = 1;
+	while (lst->next != NULL)
 	{
-		if (!*str)
-			return (NULL);
-		str++;
+		lst = lst->next;
+		len++;
 	}
-	return ((char *)str);
+	return (len);
 }

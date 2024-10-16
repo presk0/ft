@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 19:19:56 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:14:55 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,12 @@ static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 		{
 			ret[i_wd] = (char *) malloc(sizeof(char) * (wd_len + 1));
 			if (!ret[i_wd])
+			{
+				ft_free_split(ret);
 				return (NULL);
+			}
 		}
 		ft_strlcpy(ret[i_wd], s, wd_len + 1);
-		ret[i_wd][wd_len] = '\0';
 		s += wd_len;
 		i_wd++;
 	}
@@ -52,81 +54,3 @@ char	**ft_split(char const *s, char c)
 	ret[nb_wd] = NULL;
 	return (ret);
 }
-
-/*
-//
-#include <string.h>
-#include <stdio.h>
-// MAIN
-
-void put_header(void)
-{
-	printf("****************************************************\n");
-}
-
-int main(void)
-{
-	char	**sortie;
-	int		ii;
-
-	put_header();
-	sortie = ft_split("Phrase de      test", ' ');
-	ii = 0;
-	while (sortie[ii] != NULL)
-		 printf("%s\n", sortie[ii++]); 
-
-	put_header();
-	sortie = ft_split("P", ' ');
-	ii = 0;
-	while (sortie[ii] != NULL)
-		 printf("%s\n", sortie[ii++]); 
-
-	put_header();
-	sortie = ft_split("", ' ');
-	ii = 0;
-	while (sortie[ii] != NULL)
-		 printf("%s\n", sortie[ii++]); 
-
-	put_header();
-	sortie = ft_split(" a ", ' ');
-	ii = 0;
-	while (sortie[ii] != NULL)
-		 printf("%s\n", sortie[ii++]); 
-
-	put_header();
-	sortie = ft_split(" a", ' ');
-	ii = 0;
-	while (sortie[ii] != NULL)
-		 printf("%s\n", sortie[ii++]); 
-
-	put_header();
-	sortie = ft_split("a ", ' ');
-	ii = 0;
-	while (sortie[ii] != NULL)
-		 printf("%s\n", sortie[ii++]); 
-
-	put_header();
-	ii = 0;
-	while (sortie[ii] != NULL)
-		 printf("%s\n", sortie[ii++]); 
-		 printf("+++++++++"); 
-}
-	char s[10];
-	strcpy(s, "");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-	strcpy(s, "  ");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-	strcpy(s, "a");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-	strcpy(s, "a ");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-	strcpy(s, " a");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-	strcpy(s, " a ");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-	strcpy(s, "  aa  ");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-	strcpy(s, "bb   bb");
-	printf("for [%s] -> %d\n", s, _count(s, ' '));
-}
-*/

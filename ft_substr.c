@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/24 19:31:33 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:03:07 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,32 +32,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return_val = substr;
 	while (len-- && *s)
-	{
 		*substr++ = *s++;
-	}
 	*substr = '\0';
 	return (return_val);
 }
-
 /*
-//
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
-
-// MAIN
-
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	str[100];
-	char	*output;
-	int		start;
-	int		len;
-
-	strcpy(str, "une chaine");
-	start	= 1;
-	len		= 3;
-	output = ft_substr(str, start, len);
-	printf("ft_substr(\"%s\", %d, %d) => [%s]\n", str, start, len, output);
+	printf("%s\n", ft_substr(argv[1], atoi(argv[2]), atoi(argv[3])));
 }
 */

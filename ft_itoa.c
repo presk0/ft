@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/21 16:08:29 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:25:57 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int	ft_intlen(int n)
 	len = 0;
 	if (n < 0)
 	{
+		n += 1;
 		n *= -1;
 		len++;
 	}
