@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+         #
+#    By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2024/10/16 15:13:49 by nidionis         ###   ########.fr        #
+#    Updated: 2024/10/17 18:03:54 by nidionis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

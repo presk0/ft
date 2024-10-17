@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_err.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:13:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/05/11 18:19:21 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:42:06 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,33 +50,27 @@ int	ft_atoi_err(char *str)
 	}
 	return (sign * nbr);
 }
-
 /*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int	main(void)
+void	ft_atoi_tester(int argc, char **argv)
 {
-	char *nb;
-
-	nb = malloc(50);
-	strcpy(nb, "2147483647");
-		printf("atoi(%s) = %d\n", nb, atoi(nb));
-		printf("ft_atoi_err(%s) = %d\n", nb, ft_atoi_err(nb));
-	strcpy(nb, " 	-2147483648");
-		printf("atoi(%s) = %d\n", nb, atoi(nb));
-		printf("ft_atoi_err(%s) = %d\n", nb, ft_atoi_err(nb));
-	strcpy(nb, " 	-0aa");
-		printf("atoi(%s) = %d\n", nb, atoi(nb));
-		printf("ft_atoi_err(%s) = %d\n", nb, ft_atoi_err(nb));
-	strcpy(nb, "");
-		printf("atoi(%s) = %d\n", nb, atoi(nb));
-		printf("ft_atoi_err(%s) = %d\n", nb, ft_atoi_err(nb));
-	strcpy(nb, "   -000999999999999999999999999992365s654");
-		printf("atoi(%s) = %d\n", nb, atoi(nb));
-		printf("ft_atoi_err(%s) = %d\n", nb, ft_atoi_err(nb));
-	printf("All tested\n");
-	free(nb);
+	if (argc != 2)
+	{
+		printf("usage : ./ft_atoi_err [str]\n");
+		exit(0);
+	}
+	if (ft_atoi_err(argv[1]) != atoi(argv[1]))
+	{
+		printf("%i\n", ft_atoi(argv[1]));
+		printf("differents output for str=%s\n", argv[1]);
+		exit(1);
+	}
+}
+int	main(int argc, char **argv)
+{
+	ft_atoi_tester(argc, argv);
 	return (0);
 }
 */
