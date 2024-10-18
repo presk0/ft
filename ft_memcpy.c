@@ -3,77 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 16:35:52 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:54:35 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, unsigned int len)
+void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
-	unsigned int	ii;
+	size_t	i;
 
-	ii = 0;
+	i = 0;
 	if (len == 0 || dst == src)
 		return (dst);
-	while (ii < len)
+	while (i < len)
 	{
-		((char *) dst)[ii] = ((char *) src)[ii];
-		ii++;
+		((char *) dst)[i] = ((char *) src)[i];
+		i++;
 	}
 	return (dst);
 }
 
 /*
-//
 #include <string.h>
 #include <stdio.h>
-// MAIN
 int test_memcpy(char *to_cpy, int len)
 {
+	int		result = 0;
 	char	s1[1000];
 	char	s2[1000];
-	int		ii = 0;
+	int		i = 0;
 
 	memcpy(s1, to_cpy, len);
 	ft_memcpy(s2, to_cpy, len);
-	while (ii < len)
+	while (i < len)
 	{
-		if (s1[ii] != s2[ii])
+		if (s1[i] != s2[i])
 		{
-			printf("differents output for str=[%s]\nmemcpy(str) = [%s]\n\
-			ft_memcpy(str) = [%s]\nlen = %d\n"\
-			, to_cpy, s1, s2, len);
-			printf("\n");
-			printf("\n");
-			return (1);
+			result = 1;
+			break ;
 		}
-		ii++;
+		i++;
 	}
-	return (0);
+	return (result);
 }
 
-int	main(int argc, char *argv[])
+int main(int argc, char *argv[]) 
 {
-	int ii = 0;
-
-	while (ii < 5)
-	{
-		char str[ii];
-		strcpy(str, "abc\n");
-		test_memcpy(str, ii);
-		ii++;
-	}
-	ii = 0;
-	while (ii < 5)
-	{
-		char str[ii];
-		strcpy(str, "");
-		test_memcpy(str, ii);
-		ii++;
-	}
+	printf
+	test_memcpy(argv[1], atoi(argv[2]));
 }
 */

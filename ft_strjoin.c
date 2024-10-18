@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:22:54 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:14:29 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,30 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t			len_s1;
-	unsigned int	ii;
+	unsigned int	i;
 	char			*ret;
 
 	if (!s1)
 		return (NULL);
-	ii = 0;
+	i = 0;
 	len_s1 = ft_strlen((char *) s1);
 	ret = (char *) malloc(sizeof(char) * (ft_strlen((char *) s2) + len_s1 + 1));
 	if (!ret)
 		return (NULL);
-	ii = 0;
-	while (ii < len_s1)
+	i = 0;
+	while (i < len_s1)
 	{
-		ret[ii] = s1[ii];
-		ii++;
+		ret[i] = s1[i];
+		i++;
 	}
-	while (s2[ii - len_s1])
+	while (s2[i - len_s1])
 	{
-		ret[ii] = s2[ii - len_s1];
-		ii++;
+		ret[i] = s2[i - len_s1];
+		i++;
 	}
-	ret[ii] = '\0';
+	ret[i] = '\0';
 	return (ret);
 }
-
 /*
 //
 #include <stdio.h>

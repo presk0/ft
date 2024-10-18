@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/09 15:44:33 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:55:04 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned int	ii;
+	size_t	i;
 
-	ii = 0;
+	i = 0;
 	if (!dst && !src)
 		return (NULL);
 	if (dst < src)
 	{
-		while (ii < len)
+		while (i < len)
 		{
-			((char *) dst)[ii] = ((char *) src)[ii];
-			ii++;
+			((char *) dst)[i] = ((char *) src)[i];
+			i++;
 		}
 	}
 	else
 	{
-		while (ii < len)
+		while (i < len)
 		{
-			((char *) dst)[len - ii - 1] = ((char *) src)[len - ii - 1];
-			ii++;
+			((char *) dst)[len - i - 1] = ((char *) src)[len - i - 1];
+			i++;
 		}
 	}
 	return (dst);
 }
-
 /*
 //
 #include <string.h>

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 12:08:18 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:23:47 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:58:36 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static unsigned int	ft_strnlen(char *s, size_t max)
 {
-	unsigned int	ii;
+	unsigned int	i;
 
-	ii = 0;
-	while (s[ii] && ii < max)
-		ii++;
-	return (ii);
+	i = 0;
+	while (s[i] && i < max)
+		i++;
+	return (i);
 }
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)

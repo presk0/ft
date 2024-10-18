@@ -6,11 +6,25 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/16 14:03:07 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/18 12:43:05 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	malloc_len(char const *s, unsigned int start, size_t len)
+{
+	size_t	ret;
+	size_t	slen;
+
+	slen = ft_strlen(s);
+	if (slen < start)
+		return (0);
+	ret = slen - start;
+	if (len < ret)
+		ret = len;
+	return (ret);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -19,6 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
+	len = malloc_len(s, start, len);
 	substr = (char *) malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);

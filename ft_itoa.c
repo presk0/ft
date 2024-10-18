@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/16 14:25:57 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:15:56 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@ static int	ft_intlen(int n)
 	int	len;
 
 	len = 0;
-	if (n < 0)
+	if (n == -2147483648)
+		return (11);
+	else if (n <= 0)
 	{
-		n += 1;
 		n *= -1;
 		len++;
 	}
-	while (n > 9)
+	while (n > 0)
 	{
 		n /= 10;
 		len++;
 	}
-	return (++len);
+	return (len);
 }
 
 static char	*my_loc(int len)
@@ -82,24 +83,15 @@ char	*ft_itoa(int n)
 	make_str(&n, num, len);
 	return (ret);
 }
-
 /*
 //
 #include <stdio.h>
 // MAIN
-int main(void)
+int main(int argc, char **argv)
 {
-	char	*strnb;
+	char	*strnb = argv[1];
 
-	strnb = ft_itoa(-123);
-	printf("%s\n", strnb);
-	free(strnb);
-
-	strnb = ft_itoa(-0);
-	printf("%s\n", strnb);
-	free(strnb);
-
-	strnb = ft_itoa(1230);
+	strnb = ft_itoa(atoi(strnb));
 	printf("%s\n", strnb);
 	free(strnb);
 }

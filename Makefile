@@ -6,11 +6,11 @@
 #    By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2024/10/17 18:03:54 by nidionis         ###   ########.fr        #
+#    Updated: 2024/10/18 12:28:32 by nidionis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = error_msg.c ft_atoi.c ft_atoi_err.c ft_bzero.c ft_calloc.c \
+SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 ft_free_split.c ft_get_next_wd.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_itoa.c \
 ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c \
@@ -26,25 +26,31 @@ OBJS = ${SRCS:.c=.o}
 
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
+OBJS_DIR = obj/
+
+OBJS_ABS = $(addprefix ${OBJS_DIR}, ${OBJS})
+OBJS_BONUS_ABS = $(addprefix ${OBJS_DIR}, ${OBJS_BONUS})
+
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
 
-CC = gcc
+CC = cc
 
 all: ${NAME}
 
-bonus: ${OBJS_BONUS} ${NAME}
-	ar rs ${NAME} ${OBJS_BONUS}
+bonus: ${OBJS_BONUS_ABS} ${NAME}
+	ar rs ${NAME} ${OBJS_BONUS_ABS}
 
-${NAME}: ${OBJS}
+${NAME}: ${OBJS_ABS}
 	ar rcs $@ $?
 
-%.o: %.c
-	${CC} ${CFLAGS} -c $<
+${OBJS_DIR}%.o: %.c
+	@mkdir -p $(OBJS_DIR)
+	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-	rm -rf ${OBJS} ${OBJS_BONUS}
+	rm -rf ${OBJS_DIR}
 
 fclean: clean
 	rm -rf ${NAME}

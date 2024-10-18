@@ -6,16 +6,16 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/10 16:13:47 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:59:54 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*	les parametres de f sont imposes arbitrairement : ii et s[ii] */
+/*	les parametres de f sont imposes arbitrairement : i et s[i] */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	ii;
+	unsigned int	i;
 	char			*ret;
 
 	if (s)
@@ -23,13 +23,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ret = (char *) malloc(sizeof(char) * (ft_strlen((char *) s) + 1));
 		if (!ret)
 			return (NULL);
-		ii = 0;
-		while (s[ii] != '\0')
+		i = 0;
+		while (s[i] != '\0')
 		{
-			ret[ii] = (*f)(ii, s[ii]);
-			ii++;
+			ret[i] = (*f)(i, s[i]);
+			i++;
 		}
-		ret[ii] = '\0';
+		ret[i] = '\0';
 		return (ret);
 	}
 	return (NULL);

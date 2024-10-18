@@ -6,27 +6,24 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:22:12 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:53:34 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* comparaison en unsigned char ? */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	ii;
+	size_t	i;
 
-	ii = 0;
-	while (ii < n)
+	i = 0;
+	while (i < n)
 	{
-		if (*((unsigned char *) s1 + ii) == *((unsigned char *) s2 + ii))
-		{
-			ii++;
-		}
+		if (*((char *) s1 + i) == *((char *) s2 + i))
+			i++;
 		else
-			return (*((unsigned char *) s1 + ii)
-				- *((unsigned char *) s2 + ii));
+			return (*((unsigned char *) s1 + i)
+				- *((unsigned char *) s2 + i));
 	}
 	return (0);
 }

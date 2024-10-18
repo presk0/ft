@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/16 14:14:55 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:39:03 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ char	**ft_split(char const *s, char c)
 	char			**ret;
 	unsigned int	nb_wd;
 
-	if (!s)
-		return (NULL);
 	nb_wd = ft_wd_count((char *) s, c);
 	ret = (char **) malloc((nb_wd + 1) * sizeof(char *));
 	if (!ret)
@@ -54,3 +52,8 @@ char	**ft_split(char const *s, char c)
 	ret[nb_wd] = NULL;
 	return (ret);
 }
+/*
+int main(int argc, char **argv) {
+	printf("%s\n", ft_split(argv[1], atoi(argv[2])));
+}
+*/

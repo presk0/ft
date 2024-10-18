@@ -6,23 +6,34 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 17:56:34 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:49:04 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_ismin(int c)
+{
+	if (c >= (int) 'a' && c <= (int) 'z')
+		return (1);
+	else
+		return (0);
+}
+
+int	ft_ismaj(int c)
+{
+	if (c >= (int) 'A' && c <= (int) 'Z')
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_isalpha(int c)
 {
-	if ((c >= (int) 'A' && c <= (int) 'Z') || \
-		(c >= (int) 'a' && c <= (int) 'z'))
-	{
+	if (ft_ismin(c) || ft_ismaj(c))
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }
 /*
 //

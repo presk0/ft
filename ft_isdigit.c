@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 17:56:49 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:49:20 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-	{
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }
 /*
 //

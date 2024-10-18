@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wd_count.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 13:09:34 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/16 14:19:23 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:39:33 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,17 @@ int	ft_wd_count(char *str, char sep)
 	int		wd_nb;
 
 	wd_nb = 0;
-	if (str && sep)
+	if (str)
 	{
 		while (*str == sep)
 			str++;
 		while (*str)
 		{
 			str = ft_get_next_wd(str, sep);
-			if (str != NULL)
+			if (str)
 				wd_nb++;
 		}
 	}
-	else
-		error_msg("str == NULL in wc str");
 	return (wd_nb);
 }
 
