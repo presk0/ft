@@ -3,36 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:38:52 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:54:28 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <string.h>
+#include <stdio.h>
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
 	while (i < n)
 	{
-		if (*((char *) s1 + i) == *((char *) s2 + i))
-			i++;
-		else
-			return (*((unsigned char *) s1 + i)
-				- *((unsigned char *) s2 + i));
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
 	}
 	return (0);
 }
 
 /*
-//
-#include "error_msg.h"
-#include <string.h>
-// MAIN
 int test_memcmp(char *s1, char *s2, int len)
 {
 	int		ii = 0;
@@ -41,7 +42,7 @@ int test_memcmp(char *s1, char *s2, int len)
 		return (1);
 	else
 	{
-		printf("[BUG]\ns1 = %s, s2 %s\nmemcmp = %d\nft_memcmp = %d\nlen = %d\n\
+		printf("[BUG]\ns1 = %s, s2 %s\nmemcmp = %d (=%c)\nft_memcmp = %d\nlen = %d\n\
 		\n", s1, s2, memcmp(s1, s2, len), ft_memcmp(s1, s2, len), len);
 		return (0);
 	}
@@ -54,34 +55,34 @@ int	main(int argc, char *argv[])
 	char s2[100];
 	int ret = 1;
 
-	while (ii < 5)
+	while (ii < 3)
 	{
-		strcpy(s1, "abc");
-		strcpy(s2, "abc");
-		test_memcmp(s1, s2, ii);
-
-		strcpy(s1, "abc");
+		strcpy(s1, "a");
 		strcpy(s2, "");
 		test_memcmp(s1, s2, ii);
 
 		strcpy(s1, "");
-		strcpy(s2, "abc");
+		strcpy(s2, "a");
 		test_memcmp(s1, s2, ii);
 
-		strcpy(s1, "abz");
-		strcpy(s2, "abcfghdfgh");
+		strcpy(s1, "a");
+		strcpy(s2, "a");
 		test_memcmp(s1, s2, ii);
 
-		strcpy(s1, "abcfghdfgh");
-		strcpy(s2, "abz");
+		strcpy(s1, "a");
+		strcpy(s2, "b");
 		test_memcmp(s1, s2, ii);
 
-		strcpy(s1, "abcfgz");
-		strcpy(s2, "abcfghdfgh");
+		strcpy(s1, "b");
+		strcpy(s2, "a");
 		test_memcmp(s1, s2, ii);
 
-		strcpy(s1, "abcfghdfgh");
-		strcpy(s2, "abcfgz");
+		strcpy(s1, "a");
+		strcpy(s2, "ab");
+		test_memcmp(s1, s2, ii);
+
+		strcpy(s1, "ab");
+		strcpy(s2, "a");
 		test_memcmp(s1, s2, ii);
 		ii++;
 	}

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:55:04 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:50:30 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 23:05:40 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ char	*ft_strdup(const char *str)
 	if (!str)
 		return (NULL);
 	s_len = ft_strlen(str);
-	scpy = (char *) calloc(s_len + 1, sizeof(char));
+	scpy = (char *) ft_calloc(s_len + 1, sizeof(char));
 	if (!scpy)
 		return (NULL);
 	i = 0;
 	while (i < s_len)
-		scpy[i] = str[i++];
+	{
+		scpy[i] = str[i];
+		i++;
+	}
 	return (scpy);
 }
-
 /*
 //
 #include <stdio.h>
