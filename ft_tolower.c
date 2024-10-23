@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:18:15 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:17:17 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 int	ft_tolower(int c)
 {
 	if (c >= (int) 'A' && c <= (int) 'Z')
-	{
 		return (c + 32);
-	}
 	else
-	{
 		return (c);
-	}
 }
+
 /*
 //
 #include "error_msg.h"

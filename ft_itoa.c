@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:15:56 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:19:08 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,57 +32,40 @@ static int	ft_intlen(int n)
 	return (len);
 }
 
-static char	*my_loc(int len)
-{
-	char	*ret;
 
-	ret = (char *) malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (NULL);
-	ret[len] = '\0';
-	return (ret);
-}
-
-static void	make_str(int *n, char *n_str, int i)
-{
-	while (i--)
-	{
-		*(n_str + i) = (char)(*n % 10) + '0';
-		*n /= 10;
-	}
-}
-
-static char	*carry_negative(int *n, char *n_strn, int *len)
+static void	make_str(int *n, char *str, int len)
 {
 	if (*n < 0)
 	{
-		*(n_strn++) = '-';
-		(*len)--;
+		*str++ = '-';
+		len--;
 		*n *= -1;
 	}
-	return (n_strn);
+	while (len--)
+	{
+		*(str + len) = (char)(*n % 10) + '0';
+		*n /= 10;
+	}
 }
 
 char	*ft_itoa(int n)
 {
 	int		len;
-	char	*ret;
-	char	*num;
+	char	*str;
 
 	len = ft_intlen(n);
-	ret = my_loc(len);
-	if (!ret)
+	str = (char *) ft_calloc(len + 1, sizeof(char));
+	if (!str)
 		return (NULL);
-	num = ret;
 	if (n == -2147483648)
 	{
-		ft_strlcpy(ret, "-2147483648", 12);
-		return (ret);
+		ft_strlcpy(str, "-2147483648", 12);
+		return (str);
 	}
-	num = carry_negative(&n, num, &len);
-	make_str(&n, num, len);
-	return (ret);
+	make_str(&n, str, len);
+	return (str);
 }
+
 /*
 //
 #include <stdio.h>

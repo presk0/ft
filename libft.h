@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 14:55:43 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:45:00 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_list
 
 int		ft_atoi(const char *str0);
 void	*ft_bzero(void *s, size_t n);
-void	test_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_free_split(char **tab);
 char	*ft_get_next_wd(char *sentence, char sep);

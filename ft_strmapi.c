@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:59:54 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:58:59 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s)
 	{
-		ret = (char *) malloc(sizeof(char) * (ft_strlen((char *) s) + 1));
+		ret = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
 		if (!ret)
 			return (NULL);
 		i = 0;
 		while (s[i] != '\0')
-		{
-			ret[i] = (*f)(i, s[i]);
-			i++;
-		}
-		ret[i] = '\0';
+			ret[i] = f(i, s[i++]);
 		return (ret);
 	}
 	return (NULL);

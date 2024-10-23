@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:13:11 by supersko          #+#    #+#             */
-/*   Updated: 2022/06/01 12:47:55 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:20:04 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_free_split(char **tab)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
+	if (tab)
 	{
-		free(tab[i++]);
+		while (*tab)
+		{
+			free(*tab++);
+			*tab = NULL;
+		}
+		free(tab);
+		tab = NULL;
 	}
-	free(tab);
 }

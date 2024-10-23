@@ -6,7 +6,7 @@
 #    By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2024/10/18 12:28:32 by nidionis         ###   ########.fr        #
+#    Updated: 2024/10/22 19:48:59 by nidionis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,15 +39,18 @@ CC = cc
 
 all: ${NAME}
 
-bonus: ${OBJS_BONUS_ABS} ${NAME}
-	ar rs ${NAME} ${OBJS_BONUS_ABS}
-
 ${NAME}: ${OBJS_ABS}
-	ar rcs $@ $?
+	@ar rcs $@ $?
+
+bonus: ${OBJS_BONUS_ABS} ${NAME}
+	@ar rcs ${NAME} ${OBJS_BONUS_ABS}
 
 ${OBJS_DIR}%.o: %.c
 	@mkdir -p $(OBJS_DIR)
 	${CC} ${CFLAGS} -c $< -o $@
+
+test:
+	gcc *.c 
 
 clean:
 	rm -rf ${OBJS_DIR}

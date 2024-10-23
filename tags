@@ -33,14 +33,15 @@ ft_atoi	ft_atoi.c	/^int	ft_atoi(const char *str0)$/;"	f	typeref:typename:int
 ft_bzero	ft_bzero.c	/^void	*ft_bzero(void *s, size_t n)$/;"	f	typeref:typename:void *
 ft_calloc	ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/;"	f	typeref:typename:void *
 ft_free_split	ft_free_split.c	/^void	ft_free_split(char **tab)$/;"	f	typeref:typename:void
-ft_get_next_wd	ft_get_next_wd.c	/^char	*ft_get_next_wd(char *sentence, char sep)$/;"	f	typeref:typename:char *
+ft_get_next_wd	ft_get_next_wd.c	/^char	*ft_get_next_wd(char *str, char sep)$/;"	f	typeref:typename:char *
 ft_intlen	ft_itoa.c	/^static int	ft_intlen(int n)$/;"	f	typeref:typename:int	file:
 ft_isalnum	ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f	typeref:typename:int
 ft_isalpha	ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f	typeref:typename:int
 ft_isascii	ft_isascii.c	/^int	ft_isascii(int c)$/;"	f	typeref:typename:int
 ft_isdigit	ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f	typeref:typename:int
+ft_ismaj	ft_isalpha.c	/^int	ft_ismaj(int c)$/;"	f	typeref:typename:int
+ft_ismin	ft_isalpha.c	/^int	ft_ismin(int c)$/;"	f	typeref:typename:int
 ft_isprint	ft_isprint.c	/^int	ft_isprint(int c)$/;"	f	typeref:typename:int
-ft_isspace	ft_atoi.c	/^static int	ft_isspace(const char c)$/;"	f	typeref:typename:int	file:
 ft_itoa	ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f	typeref:typename:char *
 ft_lstadd_back	ft_lstadd_back.c	/^void	ft_lstadd_back(t_list **lst, t_list *new)$/;"	f	typeref:typename:void
 ft_lstadd_front	ft_lstadd_front.c	/^void	ft_lstadd_front(t_list **lst, t_list *new)$/;"	f	typeref:typename:void
@@ -53,7 +54,7 @@ ft_lstnew	ft_lstnew.c	/^t_list	*ft_lstnew(void *content)$/;"	f	typeref:typename:
 ft_lstsize	ft_lstsize.c	/^int	ft_lstsize(t_list *lst)$/;"	f	typeref:typename:int
 ft_memchr	ft_memchr.c	/^void	*ft_memchr(const void *str0, int c, size_t n)$/;"	f	typeref:typename:void *
 ft_memcmp	ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f	typeref:typename:int
-ft_memcpy	ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, unsigned int len)$/;"	f	typeref:typename:void *
+ft_memcpy	ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t len)$/;"	f	typeref:typename:void *
 ft_memmove	ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f	typeref:typename:void *
 ft_memset	ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f	typeref:typename:void *
 ft_putchar_fd	ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f	typeref:typename:void
@@ -80,6 +81,7 @@ ft_tolower	ft_tolower.c	/^int	ft_tolower(int c)$/;"	f	typeref:typename:int
 ft_toupper	ft_toupper.c	/^int	ft_toupper(int c)$/;"	f	typeref:typename:int
 ft_wd_count	ft_wd_count.c	/^int	ft_wd_count(char *str, char sep)$/;"	f	typeref:typename:int
 is_trimable	ft_strtrim.c	/^static int	is_trimable(char c, char *trimset)$/;"	f	typeref:typename:int	file:
+main	ft_strtrim.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
 make_str	ft_itoa.c	/^static void	make_str(int *n, char *n_str, int i)$/;"	f	typeref:typename:void	file:
 make_tab	ft_split.c	/^static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)$/;"	f	typeref:typename:char **	file:
 malloc_len	ft_substr.c	/^size_t	malloc_len(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:size_t
@@ -88,3 +90,4 @@ next	libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
 re	Makefile	/^re: fclean all$/;"	t
 s_list	libft.h	/^typedef struct s_list$/;"	s
 t_list	libft.h	/^}	t_list;$/;"	t	typeref:struct:s_list
+test	Makefile	/^test:$/;"	t

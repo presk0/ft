@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:55:04 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:41:39 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (NULL);
 	if (dst < src)
 	{
-		while (i < len)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i++;
-		}
+		ft_memcpy(dst, src,len);
+//		while (i < len)
+//		{
+//			((char *) dst)[i] = ((char *) src)[i];
+//			i++;
+//		}
 	}
 	else
 	{

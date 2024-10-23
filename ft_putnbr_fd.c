@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:12:03 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:05:29 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:43:37 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 	{
 		n += (int) '0';
-		write(fd, (char *) &n, 1);
+		ft_putchar_fd(n, fd);
 	}
 }
 

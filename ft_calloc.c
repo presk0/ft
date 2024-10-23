@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 14:44:37 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:33:22 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:18:00 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	if (size * count / size != count)
-		return (NULL);
+	if (size)
+		if (size * count / size != count)
+			return (NULL);
 	ptr = malloc(count * size);
 	if (ptr == NULL)
 		return (NULL);

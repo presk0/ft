@@ -6,23 +6,11 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:33:46 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:18:53 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:15:30 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	is_trimable(char c, char *trimset)
-{
-	while (*trimset)
-	{
-		if (!c || *trimset++ == c)
-			return (1);
-	}
-	if (!c)
-		return (1);
-	return (0);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -32,23 +20,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
-	while (*s1 && is_trimable((char) *s1, (char *) set))
+	while (*s1 && ft_strchr(set, *s1))
 		s1++;
-	end = ft_strlen((char *) s1);
-	while (end-- > 0 && is_trimable((char) s1[end], (char *) set))
-		;
-	new_str = malloc(sizeof(char) * (++end + 1));
+	end = ft_strlen(s1);
+	while (end > 0 && ft_strchr(set, s1[end]))
+		end--;
+	new_str = ft_calloc(end + 1, sizeof(char));
 	if (!new_str)
 		return (NULL);
 	ret = new_str;
-	while (end && *s1)
-	{
-		end--;
+	while (end-- && *s1)
 		*new_str++ = *s1++;
-	}
-	*new_str = '\0';
 	return (ret);
 }
+
 /*
 #include <stdio.h>
 #include <string.h>

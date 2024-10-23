@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 14:48:15 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:03:12 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,9 @@ char	*ft_strnstr(const char *str, const char *ndl, size_t len)
 	ndl_len = ft_strlen(ndl);
 	if (!ndl_len)
 		return (p);
-	if (ndl_len <= len)
-	{
-		while (*p && i <= len - ndl_len)
-		{
-			if (!ft_strncmp(p, ndl, ndl_len))
-				return (p);
-			i++;
-			p++;
-		}
-	}
+	while (*p && i++ <= len - ndl_len)
+		if (!ft_strncmp(p++, ndl, ndl_len))
+			return (--p);
 	return (NULL);
 }
 

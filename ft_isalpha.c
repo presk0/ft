@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:49:04 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:23:45 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
+
 /*
 //
 #include "error_msg.h"

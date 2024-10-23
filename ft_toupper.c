@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2022/03/11 18:37:17 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:17:24 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
+
 /*
 //
 #include "error_msg.h"

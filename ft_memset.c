@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:55:45 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:42:26 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)
@@ -24,6 +24,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
+
 /*
 //
 #include "error_msg.h"

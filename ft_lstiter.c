@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:02:04 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/15 11:45:06 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:33:14 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	{
 		while (lst)
 		{
-			(*f)(lst->content);
+			f(lst->content);
 			lst = lst->next;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:29:28 by supersko          #+#    #+#             */
-/*   Updated: 2022/04/21 15:18:06 by supersko         ###   ########.fr       */
+/*   Updated: 2024/10/23 18:56:40 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ size_t	ft_strlen_char(char *str, char sep)
 
 	len = 0;
 	if (str)
-	{
 		while (*str && *str++ != sep)
 			len++;
-	}
 	return (len);
 }
 

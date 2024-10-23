@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 12:43:05 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/23 19:16:53 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	len = malloc_len(s, start, len);
-	substr = (char *) malloc(sizeof(char) * (len + 1));
+	substr = (char *) ft_calloc(len + 1, sizeof(char));
 	if (!substr)
 		return (NULL);
 	while (start--)
@@ -48,9 +48,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return_val = substr;
 	while (len-- && *s)
 		*substr++ = *s++;
-	*substr = '\0';
 	return (return_val);
 }
+
 /*
 #include <stdio.h>
 int	main(int argc, char **argv)
