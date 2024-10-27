@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:33:46 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 23:31:11 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:59:28 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *str, char const *set)
 {
 	char	*ret;
 	char	*new_str;
-	size_t	end;
+	int		end;
 
 	if (!str)
 		return (NULL);

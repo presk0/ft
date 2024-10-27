@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 19:19:08 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:57:10 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static int	ft_intlen(int n)
 	}
 	return (len);
 }
-
 
 static void	make_str(int *n, char *str, int len)
 {

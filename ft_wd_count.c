@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 13:09:34 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:39:33 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 12:09:27 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_wd_count(char *str, char sep)
 	wd_nb = 0;
 	if (str)
 	{
+		if (sep == '\0' && *str)
+			return (1);
 		while (*str == sep)
 			str++;
 		while (*str)

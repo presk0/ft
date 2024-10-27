@@ -6,7 +6,7 @@
 #    By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2024/10/22 19:48:59 by nidionis         ###   ########.fr        #
+#    Updated: 2024/10/24 13:02:11 by nidionis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,6 @@ OBJS = ${SRCS:.c=.o}
 
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
-OBJS_DIR = obj/
-
-OBJS_ABS = $(addprefix ${OBJS_DIR}, ${OBJS})
-OBJS_BONUS_ABS = $(addprefix ${OBJS_DIR}, ${OBJS_BONUS})
-
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror
@@ -39,21 +34,20 @@ CC = cc
 
 all: ${NAME}
 
-${NAME}: ${OBJS_ABS}
+${NAME}: ${OBJS}
 	@ar rcs $@ $?
 
-bonus: ${OBJS_BONUS_ABS} ${NAME}
-	@ar rcs ${NAME} ${OBJS_BONUS_ABS}
+bonus: ${OBJS_BONUS} ${NAME}
+	@ar rcs ${NAME} ${OBJS_BONUS}
 
-${OBJS_DIR}%.o: %.c
-	@mkdir -p $(OBJS_DIR)
+%.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
 test:
 	gcc *.c 
 
 clean:
-	rm -rf ${OBJS_DIR}
+	rm -rf ${OBJS} ${OBJS_BONUS}
 
 fclean: clean
 	rm -rf ${NAME}

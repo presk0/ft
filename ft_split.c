@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:45:44 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:07:11 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 	i_wd = 0;
 	while (i_wd < nb_wd)
 	{
-		while (*s == c)
-			s++;
+		if (c)
+			while (*s == c)
+				s++;
 		wd_len = ft_strlen_char((char *)s, c);
-		if (wd_len != 0)
+		if (wd_len)
 		{
 			ret[i_wd] = (char *) calloc(wd_len + 1, sizeof(char));
 			if (!ret[i_wd])
@@ -32,9 +33,8 @@ static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 				return (NULL);
 			}
 		}
-		ft_strlcpy(ret[i_wd], s, wd_len + 1);
+		ft_strlcpy(ret[i_wd++], s, wd_len + 1);
 		s += wd_len;
-		i_wd++;
 	}
 	return (ret);
 }
@@ -56,8 +56,9 @@ char	**ft_split(char const *s, char c)
 #include <stdio.h>
 int main(int argc, char **argv) {
 	(void)argc;
+	char **tab = ft_split("", 0);
 	//char **tab = ft_split(argv[1], argv[2][0]);
-	char **tab = ft_split(NULL, 0);
+	//char **tab = ft_split("\0aa\0bb", '\0');
 	while (*tab)
 		printf("%s\n", *tab++);
 }

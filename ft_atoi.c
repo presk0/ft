@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:15:11 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:53:02 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 static long int	c_to_i(char c)
 {
-	return ((long int) c - (long int) '0');
+	if (ft_isdigit(c))
+		return ((long int) c - (long int) '0');
+	return (0);
 }
 
 int	ft_atoi(const char *str0)
@@ -23,8 +25,6 @@ int	ft_atoi(const char *str0)
 	long int	nbr;
 	char		*str;
 
-	if (!str0)
-		return (0);
 	sign = 1;
 	str = (char *)str0;
 	while (ft_strchr("\t\n\v\f\r ", *str))
@@ -36,17 +36,24 @@ int	ft_atoi(const char *str0)
 	while (ft_isdigit(*str))
 	{
 		nbr *= 10;
-		nbr += (long int) c_to_i(*str++);
+		nbr += c_to_i(*str++);
 	}
 	return (sign * nbr);
 }
 
 /*
-//
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// MAIN
+
+int main(int argc, char **argv)
+{
+	printf("ft_atoi = %d\n", ft_atoi(NULL));
+	printf("atoi = %d\n", atoi(NULL));
+	//printf("atoi = %d\n", atoi(argv[1]));
+	//printf("ft_atoi = %d\n", ft_atoi(argv[1]));
+}
+
 int	main(void)
 {
 	char *nb;
