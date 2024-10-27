@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:17:31 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:03:41 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 void	*ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	unsigned char	*p;
 
-	i = 0;
-	while (i < n)
-	{
-		*((char *) s + i) = '\0';
-		i++;
-	}
+	p = s;
+	while (n--)
+		*p++ = '\0';
 	return (s);
 }
 
