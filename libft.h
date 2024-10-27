@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 15:45:00 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:45:47 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	*ft_calloc(size_t count, size_t size);
 void	ft_free_split(char **tab);
 char	*ft_get_next_wd(char *sentence, char sep);
 int		ft_isalnum(int c);
-int		ft_ismin(int c);
-int		ft_ismaj(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);

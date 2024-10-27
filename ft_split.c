@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 14:07:11 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 16:30:21 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 		wd_len = ft_strlen_char((char *)s, c);
 		if (wd_len)
 		{
-			ret[i_wd] = (char *) calloc(wd_len + 1, sizeof(char));
+			ret[i_wd] = (char *) ft_calloc(wd_len + 1, sizeof(char));
 			if (!ret[i_wd])
 			{
 				ft_free_split(ret);
@@ -45,7 +45,7 @@ char	**ft_split(char const *s, char c)
 	unsigned int	nb_wd;
 
 	nb_wd = ft_wd_count((char *) s, c);
-	ret = (char **) calloc((nb_wd + 1), sizeof(char *));
+	ret = (char **) ft_calloc((nb_wd + 1), sizeof(char *));
 	if (!ret)
 		return (NULL);
 	ret = make_tab(ret, s, c, nb_wd);

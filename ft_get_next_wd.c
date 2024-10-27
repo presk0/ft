@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 13:09:43 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 14:59:29 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:43:32 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_get_next_wd(char *str, char sep)
 {
 	if (str)
 	{
-		if (!(*str))
+		if (!*str)
 			return (NULL);
 		else
 			while (*str && *str != sep)

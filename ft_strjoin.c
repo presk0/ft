@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 14:55:16 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 16:29:20 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char			*ret;
 
 	len_s1 = ft_strlen(s1);
-	ret = (char *) calloc(ft_strlen(s2) + len_s1 + 1, sizeof(char));
+	ret = (char *) ft_calloc(ft_strlen(s2) + len_s1 + 1, sizeof(char));
 	if (!ret)
 		return (NULL);
 	i = -1;

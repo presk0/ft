@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 14:57:10 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:47:02 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ int main(int argc, char **argv)
 {
 	char	*strnb = argv[1];
 
-	strnb = ft_itoa(atoi(strnb));
+	//strnb = ft_itoa(atoi(strnb));
+	strnb = ft_itoa("");
 	printf("%s\n", strnb);
 	free(strnb);
 }
