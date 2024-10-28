@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 16:29:20 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 23:39:05 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,20 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t			len_s1;
-	unsigned int	i;
+	size_t			len_s2;
 	char			*ret;
 
 	len_s1 = ft_strlen(s1);
-	ret = (char *) ft_calloc(ft_strlen(s2) + len_s1 + 1, sizeof(char));
+	len_s2 = ft_strlen(s2);
+	ret = malloc(len_s2 + len_s1 + 1 * sizeof(char));
 	if (!ret)
 		return (NULL);
+	ft_strlcpy(ret, s1, ++len_s1);
+	ft_strlcat(ret, s2, len_s1 + len_s2);
+	return (ret);
+}
+
+/* peut remplacer ft_strlc..
 	i = -1;
 	if (s1)
 		while (++i < len_s1)
@@ -30,9 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s2)
 		while (s2[++i])
 			ret[i + len_s1] = s2[i];
-	return (ret);
-}
-
+*/
 /*
 //
 #include <stdio.h>

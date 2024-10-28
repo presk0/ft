@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 22:27:22 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/29 00:22:55 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	append_line(char *str, char sep, char **ret, size_t i_wd)
 	wd_len = 0;
 	while (str[wd_len] && str[wd_len] != sep)
 		wd_len++;
-	ret[i_wd] = (char *) malloc((wd_len + 1) * sizeof(char));
+	ret[i_wd] = malloc((wd_len + 1) * sizeof(char));
 	if (!ret[i_wd])
 		ft_free_split(ret);
 	else
@@ -50,8 +50,6 @@ static int	ft_wd_count(char *str, char sep)
 	wd_nb = 0;
 	if (!str)
 		return (0);
-	if (sep == '\0')
-		return (1);
 	while (*str)
 	{
 		while (*str == sep)
