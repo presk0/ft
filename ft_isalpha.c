@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 15:43:57 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:35:39 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,17 @@
 
 static int	ft_ismin(int c)
 {
-	if (c >= (int) 'a' && c <= (int) 'z')
-		return (1);
-	else
-		return (0);
+	return (c >= 'a' && c <= 'z');
 }
 
 static int	ft_ismaj(int c)
 {
-	if (c >= (int) 'A' && c <= (int) 'Z')
-		return (1);
-	else
-		return (0);
+	return (c >= 'A' && c <= 'Z');
 }
 
 int	ft_isalpha(int c)
 {
-	if (ft_ismin(c) || ft_ismaj(c))
-		return (1);
-	else
-		return (0);
+	return (ft_ismin(c) || ft_ismaj(c));
 }
 
 /*

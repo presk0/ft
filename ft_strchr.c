@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 15:51:05 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:52:04 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str != (char)c)
-		if (!*str++)
+	char	*s;
+
+	s = (char *)str;
+	c = (char)c;
+	while (*s != c)
+		if (!*s++)
 			return (NULL);
-	return ((char *)str);
+	return (s);
 }

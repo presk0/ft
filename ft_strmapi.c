@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 19:50:42 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:53:14 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 /*	les parametres de f sont imposes arbitrairement : i et s[i] */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
-	char			*ret;
+	size_t	len;
+	char	*ret;
 
 	if (s)
 	{
-		ret = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
+		len = ft_strlen(s);
+		ret = (char *) malloc((len + 1) * sizeof(char));
 		if (!ret)
 			return (NULL);
-		i = -1;
-		while (s[++i] != '\0')
-			ret[i] = f(i, s[i]);
+		ret[len] = '\0';
+		while (len--)
+			ret[len] = f(len, s[len]);
 		return (ret);
 	}
 	return (NULL);

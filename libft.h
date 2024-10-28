@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 15:45:47 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:19:27 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ typedef struct s_list
 int		ft_atoi(const char *str0);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
-void	ft_free_split(char **tab);
-char	*ft_get_next_wd(char *sentence, char sep);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -59,7 +57,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
-size_t	ft_strlen_char(char *str, char sep);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *ndl, size_t len);
@@ -68,6 +65,5 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		ft_wd_count(char *str, char sep);
 
 #endif

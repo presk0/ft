@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/18 13:50:02 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:36:15 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c < 127)
-		return (1);
-	else
-		return (0);
+	return (c >= 32 && c < 127);
 }
+
 /*
 //
 #include "error_msg.h"

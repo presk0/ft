@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:23:14 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:08:05 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	else
-		return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
 
 /*

@@ -6,25 +6,20 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 15:47:02 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:44:18 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_intlen(int n)
+static size_t	ft_intlen(long int n)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
-	if (n == -2147483648)
-		return (11);
-	else if (n <= 0)
-	{
-		n *= -1;
+	if (n <= 0)
 		len++;
-	}
-	while (n > 0)
+	while (n != 0)
 	{
 		n /= 10;
 		len++;
@@ -32,7 +27,7 @@ static int	ft_intlen(int n)
 	return (len);
 }
 
-static void	make_str(int *n, char *str, int len)
+static void	make_str(long int *n, char *str, int len)
 {
 	if (*n < 0)
 	{
@@ -42,26 +37,24 @@ static void	make_str(int *n, char *str, int len)
 	}
 	while (len--)
 	{
-		*(str + len) = (char)(*n % 10) + '0';
+		str[len] = *n % 10 + '0';
 		*n /= 10;
 	}
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*str;
+	int			len;
+	char		*str;
+	long int	num;
 
-	len = ft_intlen(n);
-	str = (char *) ft_calloc(len + 1, sizeof(char));
+	num = n;
+	len = ft_intlen(num);
+	str = malloc(len + 1 * sizeof(char));
 	if (!str)
 		return (NULL);
-	if (n == -2147483648)
-	{
-		ft_strlcpy(str, "-2147483648", 12);
-		return (str);
-	}
-	make_str(&n, str, len);
+	str[len] = '\0';
+	make_str(&num, str, len);
 	return (str);
 }
 

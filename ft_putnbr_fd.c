@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 11:12:03 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:43:37 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:24:54 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 	}
 	else
-	{
-		n += (int) '0';
-		ft_putchar_fd(n, fd);
-	}
+		ft_putchar_fd(n + '0', fd);
 }
 
 /*

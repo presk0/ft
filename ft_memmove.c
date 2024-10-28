@@ -6,11 +6,22 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 14:59:57 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:15:40 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_memrcpy(void *dst, const void *src, size_t len)
+{
+	unsigned char	*d;
+	unsigned char	*s;
+
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	while (len--)
+		d[len] = s[len];
+}
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -22,13 +33,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (dst < src)
 		ft_memcpy(dst, src, len);
 	else
-	{
-		while (i < len)
-		{
-			((char *) dst)[len - i - 1] = ((char *) src)[len - i - 1];
-			i++;
-		}
-	}
+		ft_memrcpy(dst, src, len);
 	return (dst);
 }
 

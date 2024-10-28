@@ -6,18 +6,11 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/27 16:18:38 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:25:55 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static long int	c_to_i(char c)
-{
-	if (ft_isdigit(c))
-		return ((long int) c - (long int) '0');
-	return (0);
-}
 
 int	ft_atoi(const char *str0)
 {
@@ -34,10 +27,7 @@ int	ft_atoi(const char *str0)
 			sign *= -1;
 	nbr = 0;
 	while (ft_isdigit(*str))
-	{
-		nbr *= 10;
-		nbr += c_to_i(*str++);
-	}
+		nbr = *str++ - '0' + nbr * 10;
 	return (sign * nbr);
 }
 

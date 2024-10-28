@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:39 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/15 11:45:06 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:36:24 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	unsigned int	len;
+	size_t	len;
 
 	if (lst == NULL)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 15:55:04 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/24 15:59:07 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:46:49 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ char	*ft_strdup(const char *str)
 	char		*scpy;
 
 	s_len = ft_strlen(str);
-	scpy = (char *) ft_calloc(s_len + 1, sizeof(char));
+	scpy = (char *) malloc((s_len + 1) * sizeof(char));
 	if (!scpy)
 		return (NULL);
-	i = 0;
-	while (i < s_len)
-	{
+	scpy[s_len] = '\0';
+	i = -1;
+	while (++i < s_len)
 		scpy[i] = str[i];
-		i++;
-	}
 	return (scpy);
 }
 

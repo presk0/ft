@@ -6,15 +6,15 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 12:08:18 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 18:54:35 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/28 22:28:13 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_strnlen(char *s, size_t max)
+static size_t	ft_strnlen(char *s, size_t max)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] && i < max)
