@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 23:39:05 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:20:03 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	ret = malloc(len_s2 + len_s1 + 1 * sizeof(char));
+	*ret = '\0';
 	if (!ret)
 		return (NULL);
-	ft_strlcpy(ret, s1, ++len_s1);
-	ft_strlcat(ret, s2, len_s1 + len_s2);
+	if (s1)
+		ft_strlcpy(ret, s1, ++len_s1);
+	if (s2)
+		ft_strlcat(ret, s2, len_s1 + len_s2);
 	return (ret);
 }
 

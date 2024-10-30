@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 12:08:18 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 22:28:13 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:22:09 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dstr_len;
 	size_t	len_cpy;
 
-	dstr_len = ft_strnlen(dst, dstsize);
+	dstr_len = 0;
+	if (dst)
+		dstr_len = ft_strnlen(dst, dstsize);
 	if (dstr_len == dstsize)
 		return (dstr_len + ft_strlen(src));
 	len_cpy = ft_strlcpy(dst + dstr_len, (char *) src, dstsize - dstr_len);

@@ -6,18 +6,18 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 18:35:39 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:36:34 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_ismin(int c)
+int	ft_ismin(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }
 
-static int	ft_ismaj(int c)
+int	ft_ismaj(int c)
 {
 	return (c >= 'A' && c <= 'Z');
 }

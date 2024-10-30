@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 18:27:58 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:02:48 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 	char	*s;
 
 	d = dst;
-	s = (char *)src;
+	s = (void *)src;
 	if (dst == src)
 		return (dst);
 	while (len--)

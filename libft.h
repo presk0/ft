@@ -6,12 +6,14 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 12:19:27 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:16:28 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+//# define INT_MAX 2147483647
+//# define INT_MIN -2147483648
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -22,6 +24,9 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+void	ft_errmsg(char *str);
+int		ft_ismaj(int c);
+int		ft_ismin(int c);
 int		ft_atoi(const char *str0);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);

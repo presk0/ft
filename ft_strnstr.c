@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 18:09:21 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:12:00 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 char	*ft_strnstr(const char *str, const char *ndl, size_t len)
 {
 	char		*p_str;
-	char		because_it_must_segfault;
 	size_t		ndl_len;
 
 	p_str = (char *)str;
-	because_it_must_segfault = *str;
-	(void)because_it_must_segfault;
 	ndl_len = ft_strlen(ndl);
 	if (len >= ndl_len)
 		while (*p_str && len-- && len + 1 >= ndl_len)

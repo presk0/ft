@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 13:53:14 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:11:29 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	len;
 	char	*ret;
 
-	if (s)
+	if (s && f)
 	{
 		len = ft_strlen(s);
 		ret = (char *) malloc((len + 1) * sizeof(char));

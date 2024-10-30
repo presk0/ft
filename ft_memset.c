@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 18:46:22 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:09:44 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*b_cpy;
-	unsigned char	c_cpy;
+	char	*b_cpy;
 
 	b_cpy = b;
-	c_cpy = c;
 	while (len--)
 		*b_cpy++ = c;
 	return (b);

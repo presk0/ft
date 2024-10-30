@@ -6,11 +6,11 @@
 #    By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2024/10/28 23:33:10 by nidionis         ###   ########.fr        #
+#    Updated: 2024/10/30 21:17:34 by nidionis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
+SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_errmsg.c\
 ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_itoa.c \
 ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c \

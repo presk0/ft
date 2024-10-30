@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/29 00:22:55 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:15:25 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ static size_t	append_line(char *str, char sep, char **ret, size_t i_wd)
 	while (str[wd_len] && str[wd_len] != sep)
 		wd_len++;
 	ret[i_wd] = malloc((wd_len + 1) * sizeof(char));
-	if (!ret[i_wd])
-		ft_free_split(ret);
-	else
+	if (ret[i_wd])
 		ft_strlcpy(ret[i_wd], str, wd_len + 1);
+	else
+		ft_free_split(ret);
 	return (wd_len);
 }
 
@@ -62,7 +62,7 @@ static int	ft_wd_count(char *str, char sep)
 	return (wd_nb);
 }
 
-static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
+static char	**make_tab(char **ret, char const *s, char sep, unsigned int nb_wd)
 {
 	size_t	i_wd;
 	size_t	wd_len;
@@ -70,10 +70,10 @@ static char	**make_tab(char **ret, char const *s, char c, unsigned int nb_wd)
 	i_wd = 0;
 	while (i_wd < nb_wd)
 	{
-		if (c)
-			while (*s == c)
+		if (sep)
+			while (*s == sep)
 				s++;
-		wd_len = append_line((char *)s, c, ret, i_wd);
+		wd_len = append_line((char *)s, sep, ret, i_wd);
 		if (!ret[i_wd++])
 			return (NULL);
 		s += wd_len;
@@ -86,6 +86,11 @@ char	**ft_split(char const *s, char c)
 	char			**ret;
 	unsigned int	nb_wd;
 
+	if (!s)
+	{
+		write(2, "try to split a NULL\n", 20);
+		return (NULL);
+	}
 	nb_wd = ft_wd_count((char *) s, c);
 	ret = (char **) malloc((nb_wd + 1) * sizeof(char *));
 	if (!ret)
