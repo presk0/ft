@@ -6,7 +6,7 @@
 #    By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:16:38 by supersko          #+#    #+#              #
-#    Updated: 2024/10/30 21:17:34 by nidionis         ###   ########.fr        #
+#    Updated: 2024/11/10 16:31:49 by nidionis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,12 +40,6 @@ ${NAME}: ${OBJS}
 bonus: ${OBJS_BONUS} ${NAME}
 	@ar rcs ${NAME} ${OBJS_BONUS}
 
-%.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@
-
-test:
-	gcc *.c 
-
 clean:
 	rm -rf ${OBJS} ${OBJS_BONUS}
 
@@ -53,3 +47,5 @@ fclean: clean
 	rm -rf ${NAME}
 
 re: fclean all
+
+.PHONY: clean fclean all bonus re

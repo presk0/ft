@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:02:44 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/23 19:11:00 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/10 16:04:55 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 	t_list	*new;
 	void	*cont;
 
-	if (!f || !del || !lst)
-		return (NULL);
+	if (!f || !del)
+		ft_errmsg("[ft_lstmap] functions missing\n");
 	ret = NULL;
 	while (lst)
 	{

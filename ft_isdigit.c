@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 16:48:16 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 12:09:27 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/10 16:00:50 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,3 @@ int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
-
-/*
-//
-#include "error_msg.h"
-#include <ctype.h>
-#include <stdio.h>
-// MAIN
-int	main(int argc, char *argv[])
-{
-	int	ii;
-
-	ii = -1;
-	while (ii < 257)
-	{
-		if (isdigit(ii) != ft_isdigit(ii))
-		{
-			printf("isdigit(%c) = %d\n", (char)ii, isdigit(ii));
-			printf("ft_isdigit(%c) = %d\n", (char)ii, ft_isdigit(ii));
-			return (error_msg(ii, "isdigit"));
-		}
-		ii++;
-	}
-	(void)argc;
-	printf("%s have same output from same input\n", argv[0]);
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/30 21:11:29 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/10 16:20:05 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (NULL);
 }
-
-/*
-//
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-// MAIN
-char	f(unsigned int ii, char c)
-{
-	if (ii % 2)
-		return (int) (c);
-	else
-		return (int) ('-');
-}
-
-int	main(void)
-{
-	char str[] = "abcdef";
-	//char (*func)(unsigned int, char);
-	printf("%s\n", ft_strmapi(str, &f));
-}
-*/

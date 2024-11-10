@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/28 19:44:18 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/10 16:02:05 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,3 @@ char	*ft_itoa(int n)
 	make_str(&num, str, len);
 	return (str);
 }
-
-/*
-//
-#include <stdio.h>
-// MAIN
-int main(int argc, char **argv)
-{
-	char	*strnb = argv[1];
-
-	//strnb = ft_itoa(atoi(strnb));
-	strnb = ft_itoa("");
-	printf("%s\n", strnb);
-	free(strnb);
-}
-*/

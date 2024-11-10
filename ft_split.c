@@ -6,13 +6,13 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/30 21:15:25 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/10 16:14:38 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free_split(char **tab)
+void	ft_free_split(char **tab)
 {
 	if (tab)
 	{
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 	{
-		write(2, "try to split a NULL\n", 20);
+		ft_errmsg("[ft_split] try to split a NULL\n");
 		return (NULL);
 	}
 	nb_wd = ft_wd_count((char *) s, c);
@@ -99,53 +99,3 @@ char	**ft_split(char const *s, char c)
 	ret = make_tab(ret, s, c, nb_wd);
 	return (ret);
 }
-
-/*
-#include <stdio.h>
-int main(int argc, char **argv) {
-	(void)argc;
-	//char **tab = ft_split("", 0);
-	//char **tab = ft_split(argv[1], argv[2][0]);
-	char **tab = ft_split("\0aa\0bb", '\0');
-	//printf("%i\n", ft_wd_count(argv[1], argv[2][0]));
-	while (*tab)
-		printf("%s\n", *tab++);
-}
-
-static char	*ft_get_next_wd(char *str, char sep)
-{
-	if (str)
-	{
-		if (!*str)
-			return (NULL);
-		else
-			while (*str && *str != sep)
-				str++;
-		if (*str && *str == sep)
-			while (*str == sep)
-				str++;
-	}
-	return (str);
-}
-
-static int	ft_wd_count(char *str, char sep)
-{
-	int		wd_nb;
-
-	wd_nb = 0;
-	if (str)
-	{
-		if (sep == '\0' && *str)
-			return (1);
-		while (*str == sep)
-			str++;
-		while (*str)
-		{
-			str = ft_get_next_wd(str, sep);
-			if (str)
-				wd_nb++;
-		}
-	}
-	return (wd_nb);
-}
-*/
