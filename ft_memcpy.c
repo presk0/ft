@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/10 16:10:36 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:17:19 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ void	*ft_memcpy(void *dst, const void *src, size_t len)
 	s = (void *)src;
 	if (dst == src)
 		return (dst);
+	if (!dst || !src)
+	{
+		ft_errmsg("[ft_memcmp] (!dst || !src)\n");
+		return (NULL);
+	}
 	while (len--)
 		*d++ = *s++;
 	return (dst);

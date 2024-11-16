@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/10 16:11:44 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:17:35 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ void	*ft_memset(void *b, int c, size_t len)
 	char	*b_cpy;
 
 	b_cpy = b;
-	while (len--)
-		*b_cpy++ = c;
+	if (b)
+	{
+		while (len--)
+			*b_cpy++ = c;
+	}
+	else
+		ft_errmsg("[ft_memset] buffer to set is a NULL");
 	return (b);
 }

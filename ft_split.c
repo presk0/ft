@@ -6,13 +6,13 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/10 16:14:38 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:18:22 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_split(char **tab)
+static void	ft_free_split(char **tab)
 {
 	if (tab)
 	{
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 	{
-		ft_errmsg("[ft_split] try to split a NULL\n");
+		write(2, "try to split a NULL\n", 20);
 		return (NULL);
 	}
 	nb_wd = ft_wd_count((char *) s, c);

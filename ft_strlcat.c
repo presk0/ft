@@ -6,20 +6,19 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 12:08:18 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/10 16:18:15 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:23:13 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strnlen(char *s, size_t max)
+static size_t	ft_strnlen(char *s, size_t max)
 {
 	size_t	i;
 
 	i = 0;
-	if (s)
-		while (s[i] && i < max)
-			i++;
+	while (s[i] && i < max)
+		i++;
 	return (i);
 }
 

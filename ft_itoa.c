@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:17:07 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/10 16:02:05 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:16:38 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ char	*ft_itoa(int n)
 	len = ft_intlen(num);
 	str = malloc(len + 1 * sizeof(char));
 	if (!str)
+	{
+		ft_errmsg("[ft_itoa] cannot malloc");
 		return (NULL);
+	}
 	str[len] = '\0';
 	make_str(&num, str, len);
 	return (str);

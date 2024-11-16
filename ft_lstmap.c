@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:02:44 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/10 16:04:55 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:20:12 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 	t_list	*new;
 	void	*cont;
 
-	if (!f || !del)
-		ft_errmsg("[ft_lstmap] functions missing\n");
+	if (!lst)
+		return (NULL);
+	if (!del || !f)
+		return (ft_errmsg("[ft_lstmap] f or del function is missing\n"), NULL);
 	ret = NULL;
 	while (lst)
 	{
@@ -27,9 +29,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *))
 		new = ft_lstnew(cont);
 		if (!new)
 		{
+			ft_errmsg("[ft_lstmap] ft_lstnew crashed\n");
 			del(cont);
-			ft_lstclear(&ret, del);
-			return (NULL);
+			return (ft_lstclear(&ret, del), NULL);
 		}
 		ft_lstadd_back(&ret, new);
 		lst = lst->next;
