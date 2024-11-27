@@ -74,8 +74,11 @@ static char	**make_tab(char **ret, char const *s, char sep, unsigned int nb_wd)
 			while (*s == sep)
 				s++;
 		wd_len = append_line((char *)s, sep, ret, i_wd);
-		if (!ret[i_wd++])
+		if (!ret || !ret[i_wd++])
+		{
+			ft_free_split(&ret);
 			return (NULL);
+		}
 		s += wd_len;
 	}
 	return (ret);
