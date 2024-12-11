@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/16 15:17:29 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:46:06 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ static void	ft_memrcpy(void *dst, const void *src, size_t len)
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-
-	i = 0;
 	if (!dst && !src)
 	{
 		ft_errmsg("[ft_memmove] sdt or src is NULL\n");

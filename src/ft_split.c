@@ -6,14 +6,15 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/11/16 15:18:22 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/12/11 13:53:10 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free_split(char **tab)
+void	ft_free_split(char ***t)
 {
+	char	**tab = *t;
 	if (tab)
 	{
 		while (*tab)
@@ -24,6 +25,7 @@ static void	ft_free_split(char **tab)
 		free(tab);
 		tab = NULL;
 	}
+	tab = NULL;
 }
 
 static size_t	append_line(char *str, char sep, char **ret, size_t i_wd)
@@ -39,7 +41,7 @@ static size_t	append_line(char *str, char sep, char **ret, size_t i_wd)
 	if (ret[i_wd])
 		ft_strlcpy(ret[i_wd], str, wd_len + 1);
 	else
-		ft_free_split(ret);
+		ft_free_split(&ret);
 	return (wd_len);
 }
 
