@@ -6,7 +6,7 @@
 /*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 15:51:11 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/30 21:10:42 by nidionis         ###   ########.fr       */
+/*   Updated: 2024/12/15 19:15:08 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	{
 		if (!dstsize)
 			return (src_len);
-		while (*src && dstsize-- > 1)
+		if (src)
+		    while (*src && dstsize-- > 1)
 			*(dst++) = *(src++);
 		*dst = '\0';
 	}

@@ -14,9 +14,13 @@ FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_errmsg.c ft_isalnum.c ft_isalpha.c \
         ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
         ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
-OBJS = $(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
+SRCS = $(addprefix $(SRC_DIR)/, $(FILES))
+
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 NAME = libft.a
+
+all: $(NAME)
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
@@ -25,7 +29,7 @@ $(NAME): $(OBJS)
 	ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I./include -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)
@@ -33,6 +37,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re
