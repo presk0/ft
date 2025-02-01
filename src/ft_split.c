@@ -6,11 +6,11 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2024/12/11 13:53:10 by nidionis         ###   ########.fr       */
+/*   Updated: 2025/02/01 05:47:15 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 void	ft_free_split(char ***t)
 {
@@ -43,25 +43,6 @@ static size_t	append_line(char *str, char sep, char **ret, size_t i_wd)
 	else
 		ft_free_split(&ret);
 	return (wd_len);
-}
-
-static int	ft_wd_count(char *str, char sep)
-{
-	int		wd_nb;
-
-	wd_nb = 0;
-	if (!str)
-		return (0);
-	while (*str)
-	{
-		while (*str == sep)
-			str++;
-		if (*str)
-			wd_nb++;
-		while (*str && *str != sep)
-			str++;
-	}
-	return (wd_nb);
 }
 
 static char	**make_tab(char **ret, char const *s, char sep, unsigned int nb_wd)

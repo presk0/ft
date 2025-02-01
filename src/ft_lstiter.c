@@ -6,11 +6,11 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:02:04 by supersko          #+#    #+#             */
-/*   Updated: 2024/10/31 13:47:56 by nidionis         ###   ########.fr       */
+/*   Updated: 2025/02/01 05:47:15 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: supersko <ndionis@student.42mulhouse.fr>   +#+  +:+       +#+        */
+/*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2024/12/12 13:28:30 by nidionis         ###   ########.fr       */
+/*   Updated: 2025/02/01 05:45:06 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+void	ft_free_split(char ***t);
+int		ft_wd_count(char *str, char sep);
+int		ft_atoi_err(char *str);
+size_t	ft_strlen_char(char *str, char sep);
+int		ft_wd_count(char *str, char sep);
+int		ft_atoi_err(char *str_nb);
+char	*ft_get_next_wd(char *sentence, char sep);
+void	ft_errmsg(char *msg);
 void	ft_errmsg(char *str);
 int		ft_ismaj(int c);
 int		ft_ismin(int c);
@@ -68,9 +76,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int	ft_printf(const char *str, ...);
+int		printf(const char *str, ...);
 
-/* really useless fonction, dusefull for ft_printf only */
-void	loop_norminette(char **str_addr, va_list ap, int *p_itm, int *ret_val);
 
 #endif
