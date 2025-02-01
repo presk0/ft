@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2025/02/01 05:45:06 by nidionis         ###   ########.fr       */
+/*   Updated: 2025/02/01 06:00:16 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+char	*ft_get_next_wd(char *sentence, char sep);
 void	ft_free_split(char ***t);
-int		ft_wd_count(char *str, char sep);
 int		ft_atoi_err(char *str);
 size_t	ft_strlen_char(char *str, char sep);
 int		ft_wd_count(char *str, char sep);
@@ -76,7 +76,5 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		printf(const char *str, ...);
-
 
 #endif
