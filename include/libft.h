@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 18:03:26 by supersko          #+#    #+#             */
-/*   Updated: 2025/02/01 06:00:16 by nidionis         ###   ########.fr       */
+/*   Updated: 2025/02/01 16:58:58 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_list
 {
@@ -22,6 +26,10 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+char	*ft_strndup(const char *s, size_t n);
+char	**ft_tabdup(char **tab_original);
+int		ft_strcmp(const char *s1, const char *s2);
+size_t	ft_tablen(char **tab);
 char	*ft_get_next_wd(char *sentence, char sep);
 void	ft_free_split(char ***t);
 int		ft_atoi_err(char *str);

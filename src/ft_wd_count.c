@@ -14,7 +14,7 @@
 
 int	ft_wd_count(char *str, char sep)
 {
-	int		wd_nb;
+	int	wd_nb;
 
 	wd_nb = 0;
 	if (str)
@@ -35,7 +35,8 @@ int	ft_wd_count(char *str, char sep)
 
 /*
 #include <stdio.h>
-int main()
+
+int	main(void)
 {
 	printf("%d\n", ft_wd_count(NULL, 0));
 	printf("%d\n", ft_wd_count("a", ' '));

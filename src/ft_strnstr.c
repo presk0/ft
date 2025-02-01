@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *str, const char *ndl, size_t len)
 {
-	char		*p_str;
-	size_t		ndl_len;
+	char	*p_str;
+	size_t	ndl_len;
 
 	p_str = (char *)str;
 	ndl_len = ft_strlen(ndl);
@@ -29,19 +29,24 @@ char	*ft_strnstr(const char *str, const char *ndl, size_t len)
 }
 
 /*
+#include <bsd/string.h>
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
+
 int	main(int argc, char **argv)
 {
+	char	*s1;
+	char	*s2;
+	int		n;
+
 	(void)argc;
 	(void)argv;
-	char	*s1 = 0;
+	s1 = 0;
 	//char	*s1 = argv[1];
 	//char	*s2 = argv[2];
 	//char	*s1 = "hello";
-	char	*s2 = "fake";
-	int	n = atoi(argv[3]);
+	s2 = "fake";
+	n = atoi(argv[3]);
 	(void)s1;
 	(void)s2;
 	(void)n;

@@ -14,5 +14,5 @@
 
 void	ft_errmsg(char *str)
 {
-	write (2, str, ft_strlen(str));
+	write(2, str, ft_strlen(str));
 }

@@ -6,15 +6,38 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:31:55 by supersko          #+#    #+#             */
-/*   Updated: 2025/02/01 05:47:15 by nidionis         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:10:17 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdlib.h>
 
 void	ft_free_split(char ***t)
 {
-	char	**tab = *t;
+	char	**tab;
+	char	**temp;
+
+	if (!t || !*t)
+		return ;
+	tab = *t;
+	temp = tab;
+	while (*tab)
+	{
+		free(*tab);
+		*tab = NULL;
+		tab++;
+	}
+	free(temp);
+	*t = NULL;
+}
+
+/*
+void	ft_free_split(char ***t)
+{
+	char	**tab;
+
+	tab = *t;
 	if (tab)
 	{
 		while (*tab)
@@ -23,10 +46,10 @@ void	ft_free_split(char ***t)
 			*tab++ = NULL;
 		}
 		free(tab);
-		tab = NULL;
 	}
 	tab = NULL;
 }
+*/
 
 static size_t	append_line(char *str, char sep, char **ret, size_t i_wd)
 {
@@ -77,8 +100,8 @@ char	**ft_split(char const *s, char c)
 		write(2, "try to split a NULL\n", 20);
 		return (NULL);
 	}
-	nb_wd = ft_wd_count((char *) s, c);
-	ret = (char **) malloc((nb_wd + 1) * sizeof(char *));
+	nb_wd = ft_wd_count((char *)s, c);
+	ret = (char **)malloc((nb_wd + 1) * sizeof(char *));
 	if (!ret)
 		return (NULL);
 	ret[nb_wd] = NULL;

@@ -32,6 +32,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dstr_len = ft_strnlen(dst, dstsize);
 	if (dstr_len == dstsize)
 		return (dstr_len + ft_strlen(src));
-	len_cpy = ft_strlcpy(dst + dstr_len, (char *) src, dstsize - dstr_len);
+	len_cpy = ft_strlcpy(dst + dstr_len, (char *)src, dstsize - dstr_len);
 	return (dstr_len + len_cpy);
 }

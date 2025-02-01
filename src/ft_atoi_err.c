@@ -6,7 +6,7 @@
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:13:11 by supersko          #+#    #+#             */
-/*   Updated: 2025/02/01 05:52:23 by nidionis         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:14:25 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 // return error if the arg is not an int
 static int	ft_isspace(const char c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' || \
-		c == '\f' || c == '\r' || c == ' ')
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
+		|| c == ' ')
 		return (1);
 	else
 		return (0);
@@ -24,7 +24,7 @@ static int	ft_isspace(const char c)
 
 static long int	c_to_i(char c)
 {
-	return ((long int) c - (long int) '0');
+	return ((long int)c - (long int) '0');
 }
 
 int	ft_atoi_err(char *str)
@@ -44,7 +44,7 @@ int	ft_atoi_err(char *str)
 	while (ft_isdigit(*str))
 	{
 		nbr *= 10;
-		nbr += (long int) c_to_i(*str++);
+		nbr += (long int)c_to_i(*str++);
 		if (nbr > 2147483647)
 			ft_errmsg("[ft_atoi_err] not int value");
 	}
@@ -57,9 +57,10 @@ int	ft_atoi_err(char *str)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 int	main(void)
 {
-	char *nb;
+	char	*nb;
 
 	nb = malloc(50);
 	strcpy(nb, "2147483647");

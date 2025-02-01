@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nidionis <nidionis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 15:55:04 by supersko          #+#    #+#             */
-/*   Updated: 2025/02/01 05:47:15 by nidionis         ###   ########.fr       */
+/*   Created: 2025/02/01 16:47:02 by nidionis          #+#    #+#             */
+/*   Updated: 2025/02/01 17:18:48 by nidionis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *str)
+size_t	ft_tablen(char **tab)
 {
 	size_t	i;
-	size_t	s_len;
-	char	*scpy;
 
-	s_len = ft_strlen(str);
-	scpy = (char *)malloc((s_len + 1) * sizeof(char));
-	if (!scpy)
-		return (NULL);
-	scpy[s_len] = '\0';
-	i = -1;
-	while (++i < s_len)
-		scpy[i] = str[i];
-	return (scpy);
+	i = 0;
+	if (tab)
+		while (tab[i])
+			i++;
+	return (i);
 }

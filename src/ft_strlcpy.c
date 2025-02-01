@@ -22,8 +22,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		if (!dstsize)
 			return (src_len);
 		if (src)
-		    while (*src && dstsize-- > 1)
-			*(dst++) = *(src++);
+			while (*src && dstsize-- > 1)
+				*(dst++) = *(src++);
 		*dst = '\0';
 	}
 	else

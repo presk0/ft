@@ -21,7 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			s1++;
 			s2++;
 		}
-		return ((unsigned char) *s1 - (unsigned char) *s2);
+		return ((unsigned char)*s1 - (unsigned char)*s2);
 	}
 	return (0);
 }
@@ -29,7 +29,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 /*
 #include <stdio.h>
 #include <string.h>
-int main(int argc, char **argv)
+
+int	main(int argc, char **argv)
 {
 	printf("my_func: %i\n", ft_strncmp(argv[1], argv[2], atoi(argv[3])));
 	printf("original: %i\n", strncmp(argv[1], argv[2], atoi(argv[3])));

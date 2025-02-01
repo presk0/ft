@@ -38,7 +38,7 @@ char	*ft_strtrim(char const *str, char const *set)
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	printf("%s\n", ft_strtrim(argv[1], argv[2]));
 }
